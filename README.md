@@ -1,6 +1,6 @@
 Tham khảo youtube: "https://www.youtube.com/watch?v=qiJKhOnGVgA"
 - Clone project về máy  
-  `git clone https://github.com/cuongday/laptop-haui.git`
+  `git clone https://github.com/NoName2410/HomeOffice.git
 - Bắt đầu làm, kéo project mới về nhánh mình
 
   `git checkout dev`
