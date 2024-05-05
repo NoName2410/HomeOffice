@@ -26,6 +26,7 @@
 <body>
     <h2>LOGIN</h2>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <!-- Text -->
         <input type="text" name="user">
         <input type="text" name="pass">
         <input type="submit" name="dangnhap" value="Đăng nhập">
