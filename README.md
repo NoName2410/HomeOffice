@@ -11,7 +11,7 @@ Tham khảo youtube: "https://www.youtube.com/watch?v=qiJKhOnGVgA"
   <br>
   `git rebase main`
 - Checkout sang nhánh **_main_**  
-  `git checkout dev`
+  `git checkout main`
 - Từ nhánh **_main_** checkout sang nhánh của mình  
   `git checkout -b <your_branch_name>`
 - Sau khi hoàn thành task push lên nhánh của mình **(Không push lên nhánh _main_ hoặc _dev_)**  
