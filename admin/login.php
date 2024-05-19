@@ -4,7 +4,7 @@ ob_start();
 include "../model/connectdb.php";
 include "../model/user.php";
 
-if ((isset($_POST['dangnhap'])) && ($_POST['dangnhap'])) {
+if ((isset($_POST['login'])) && ($_POST['login'])) {
     $user = $_POST['user'];
     $pass = $_POST['pass'];
     $role = checkuser($user, $pass);
@@ -68,38 +68,31 @@ if ((isset($_POST['dangnhap'])) && ($_POST['dangnhap'])) {
 
     <!-- Start Hero Section -->
     <div class="hero">
-        <div class="container">
+        <div class="container relative">
             <div class="row justify-content-between">
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                    <table>
-                        <tr>
-                            <td colspan="2">
-                                <<h1>LOGIN</h1>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Username:
-                            </td>
-                            <td><input type="text" name="user"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Password:
-                            </td>
-                            <td><input type="text" name="pass"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><input class="btn btn-white-outline" type="submit" name="dangnhap" value="Đăng nhập"></td>
-                        </tr>
-                    </table>
-
-                    <?php
-                    if (isset($txt_error) && $txt_error != "") {
-                        echo "<font color='red'>" . $txt_error . "</font>";
-                    }
-                    ?>
-                </form>
+                <div class="col-12 col-sm-8 col-md-6 m-auto">
+                    <div class="card border-0 shadow">
+                        <div class="card body">
+                            <svg class="mx-auto my-3" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                            </svg>
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                <input type="text" name="user" required class="form-control my-4 py-2" placeholder="Username">
+                                <input type="password" name="pass" required class="form-control my-4 py-2" placeholder="Password">
+                                <div class="text-center mt-3">
+                                    <input class="btn btn-primary" type="submit" name="login" value="Login">
+                                    <a href="#" class="nav-link">Don't have account yet? Sign up now</a>
+                                </div>
+                                <?php
+                                if (isset($txt_error) && $txt_error != "") {
+                                    echo "<font color='red'>" . $txt_error . "</font>";
+                                }
+                                ?>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
