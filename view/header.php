@@ -1,23 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Untree.co">
     <link rel="shortcut icon" href="favicon.png">
-    
+
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap4" />
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="../css/tiny-slider.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-    <title>Admin page</title>
+    <link href="css/tiny-slider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <title>HomeOffice</title>
 </head>
 
 <body>
+
     <!-- Start Header/Navigation -->
     <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
@@ -30,19 +32,20 @@
 
             <div class="collapse navbar-collapse" id="navbarsFurni">
                 <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index.php">Dashboard</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
-                    <li><a class="nav-link" href="index.php?act=danhmuc">Bảo trì danh mục</a></li>
-                    <li><a class="nav-link" href="index.php?act=sanpham">Bảo trì sản phẩm</a></li>
-                    <li><a class="nav-link" href="index.php?act=tintuc">Bảo trì tin tức</a></li>
-                    <li><a class="nav-link" href="index.php?act=taikhoan">Quản lý tài khoản</a></li>
-                    <li><a class="nav-link" href="index.php?act=donhang">Quản lý đơn hàng</a></li>
+                    <li><a class="nav-link" href="index.php?act=shop">Shop</a></li>
+                    <li><a class="nav-link" href="index.php?act=about">About us</a></li>
+                    <li><a class="nav-link" href="index.php?act=services">Services</a></li>
+                    <li><a class="nav-link" href="index.php?act=blog">Blog</a></li>
+                    <li><a class="nav-link" href="index.php?act=contact">Contact us</a></li>
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                    <li><a class="nav-link active" href="login.php"><img src="../images/user.svg"></a></li>
-                    <li><a class="nav-link active" href="index.php?act=thoat" name="exit"><img src="../images/logout.svg"></a></li>
+                    <li><a class="nav-link" href="admin/login.php"><img src="images/user.svg"></a></li>
+                    <li style="margin-right: 20px;"><a class="nav-link" href="cart.php"><img src="images/cart.svg"></a></li>
+                    <li><a class="nav-link" href="admin/index.php?act=thoat" name="exit"><img src="images/logout.svg"></a></li>
                 </ul>
             </div>
         </div>
