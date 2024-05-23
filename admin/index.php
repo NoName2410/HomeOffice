@@ -56,10 +56,6 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
             case 'donhang':
                 include "views/donhang.php";
                 break;
-            case 'thoat':
-                if(isset($_SESSION['role'])) unset($_SESSION['role']);
-                header('location: login.php');
-                break;
             default:
                 include "views/dashboard.php";
                 break;
@@ -69,5 +65,5 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
     }
     include "views/footer.php";
 } else {
-    header('location: login.php');
+    header('location: ../login.php');
 }

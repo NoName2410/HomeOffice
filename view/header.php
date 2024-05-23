@@ -43,9 +43,20 @@
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                    <li><a class="nav-link" href="admin/login.php"><img src="images/user.svg"></a></li>
-                    <li style="margin-right: 20px;"><a class="nav-link" href="cart.php"><img src="images/cart.svg"></a></li>
-                    <li><a class="nav-link" href="admin/index.php?act=thoat" name="exit"><img src="images/logout.svg"></a></li>
+                    <!-- <li style="margin-right: 20px;"><a class="nav-link" href="login.php">Login</a></li>
+                    <li style="margin-right: 20px;"><a class="nav-link" href="signup.php">Signup</a></li> -->
+
+                    <?php
+                    if (isset($_SESSION['username']) && ($_SESSION['username'] != "")) {
+                        echo '<li><a class="nav-link" href="index.php?act=userinfo">' . $_SESSION['username'] . '</a></li>';
+                        echo '
+                        <li style="margin-right: 20px;"><a class="nav-link" href="cart.php"><img src="images/cart.svg"></a></li>
+                        <li style="margin-right: 20px;"><a class="nav-link" href="index.php?act=thoat" name="exit">Logout</a></li>';
+                    } else {
+                    ?>
+                        <li style="margin-right: 20px;"><a class="nav-link" href="login.php">Login</a></li>
+                        <li style="margin-right: 20px;"><a class="nav-link" href="signup.php">Signup</a></li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

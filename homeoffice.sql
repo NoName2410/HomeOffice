@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 21, 2024 at 08:15 AM
+-- Generation Time: May 23, 2024 at 07:49 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -25,6 +25,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_chitietdonhang`
+--
+
+CREATE TABLE `tbl_chitietdonhang` (
+  `id` int(4) NOT NULL,
+  `idsp` int(4) NOT NULL,
+  `iddh` int(4) NOT NULL,
+  `slm` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_danhmuc`
 --
 
@@ -33,6 +46,28 @@ CREATE TABLE `tbl_danhmuc` (
   `tendm` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `uutien` int(4) NOT NULL DEFAULT '0',
   `hienthi` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tbl_danhmuc`
+--
+
+INSERT INTO `tbl_danhmuc` (`id`, `tendm`, `uutien`, `hienthi`) VALUES
+(11, 'danh muc', 0, 1),
+(12, '', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_donhang`
+--
+
+CREATE TABLE `tbl_donhang` (
+  `id` int(4) NOT NULL,
+  `idkh` int(4) NOT NULL,
+  `payment` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -46,7 +81,8 @@ CREATE TABLE `tbl_sanpham` (
   `tensp` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `img` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gia` double(10,0) NOT NULL DEFAULT '0',
-  `iddm` int(4) NOT NULL
+  `iddm` int(4) NOT NULL,
+  `soluong` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -80,10 +116,25 @@ INSERT INTO `tbl_user` (`id`, `name`, `address`, `email`, `user`, `pass`, `role`
 --
 
 --
+-- Indexes for table `tbl_chitietdonhang`
+--
+ALTER TABLE `tbl_chitietdonhang`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_ctdh_sanpham` (`idsp`),
+  ADD KEY `fk_ctdh_donhang` (`iddh`);
+
+--
 -- Indexes for table `tbl_danhmuc`
 --
 ALTER TABLE `tbl_danhmuc`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_donhang`
+--
+ALTER TABLE `tbl_donhang`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_donhang_user` (`idkh`);
 
 --
 -- Indexes for table `tbl_sanpham`
@@ -103,10 +154,22 @@ ALTER TABLE `tbl_user`
 --
 
 --
+-- AUTO_INCREMENT for table `tbl_chitietdonhang`
+--
+ALTER TABLE `tbl_chitietdonhang`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tbl_danhmuc`
 --
 ALTER TABLE `tbl_danhmuc`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `tbl_donhang`
+--
+ALTER TABLE `tbl_donhang`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_sanpham`
@@ -123,6 +186,19 @@ ALTER TABLE `tbl_user`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `tbl_chitietdonhang`
+--
+ALTER TABLE `tbl_chitietdonhang`
+  ADD CONSTRAINT `fk_ctdh_donhang` FOREIGN KEY (`iddh`) REFERENCES `tbl_donhang` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `fk_ctdh_sanpham` FOREIGN KEY (`idsp`) REFERENCES `tbl_sanpham` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `tbl_donhang`
+--
+ALTER TABLE `tbl_donhang`
+  ADD CONSTRAINT `fk_donhang_user` FOREIGN KEY (`idkh`) REFERENCES `tbl_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `tbl_sanpham`

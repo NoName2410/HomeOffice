@@ -42,7 +42,7 @@
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
                     <li><a class="nav-link active" href="login.php"><img src="../images/user.svg"></a></li>
-                    <li><a class="nav-link active" href="index.php?act=thoat" name="exit"><img src="../images/logout.svg"></a></li>
+                    <li><a class="nav-link active" href="../index.php?act=thoat" name="exit"><img src="../images/logout.svg"></a></li>
                 </ul>
             </div>
         </div>
