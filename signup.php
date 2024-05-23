@@ -23,14 +23,14 @@ if ((isset($_POST['login'])) && ($_POST['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Untree.co">
     <link rel="shortcut icon" href="favicon.png">
-    <title>Login</title>
+    <title>Signup</title>
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap4" />
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="../css/tiny-slider.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="css/tiny-slider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -38,7 +38,7 @@ if ((isset($_POST['login'])) && ($_POST['login'])) {
     <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
         <div class="container">
-            <a class="navbar-brand" href="../index.php">Furni<span>.</span></a>
+            <a class="navbar-brand" href="index.php">Furni<span>.</span></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -47,18 +47,18 @@ if ((isset($_POST['login'])) && ($_POST['login'])) {
             <div class="collapse navbar-collapse" id="navbarsFurni">
                 <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item ">
-                        <a class="nav-link" href="../index.php">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
-                    <li><a class="nav-link" href="../shop.php">Shop</a></li>
-                    <li><a class="nav-link" href="../about.php">About us</a></li>
-                    <li><a class="nav-link" href="../services.php">Services</a></li>
-                    <li><a class="nav-link" href="../blog.php">Blog</a></li>
-                    <li><a class="nav-link" href="../contact.php">Contact us</a></li>
+                    <li><a class="nav-link" href="shop.php">Shop</a></li>
+                    <li><a class="nav-link" href="about.php">About us</a></li>
+                    <li><a class="nav-link" href="services.php">Services</a></li>
+                    <li><a class="nav-link" href="blog.php">Blog</a></li>
+                    <li><a class="nav-link" href="contact.php">Contact us</a></li>
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
                     <li><a class="nav-link active" href="login.php"><img src="../images/user.svg"></a></li>
-                    <li><a class="nav-link" href="../cart.php"><img src="../images/cart.svg"></a></li>
+                    <li><a class="nav-link" href="cart.php"><img src="../images/cart.svg"></a></li>
                 </ul>
             </div>
         </div>
@@ -78,11 +78,12 @@ if ((isset($_POST['login'])) && ($_POST['login'])) {
                                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                             </svg>
                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                <input style="margin:0 auto;max-width:500px;" type="email" name="email" required class="form-control my-4 py-2" placeholder="Email">
                                 <input style="margin:0 auto;max-width:500px;" type="text" name="user" required class="form-control my-4 py-2" placeholder="Username">
                                 <input style="margin:0 auto;max-width:500px;" type="password" name="pass" required class="form-control my-4 py-2" placeholder="Password">
                                 <div class="text-center mt-3">
-                                    <input class="btn btn-primary" type="submit" name="login" value="Login">
-                                    <a href="signup.php" class="nav-link">Don't have account yet? Sign up now!</a>
+                                    <input class="btn btn-primary" type="submit" name="signup" value="Sign up">
+                                    <a href="login.php" class="nav-link">Had account already? Sign in now!</a>
                                 </div>
                                 <?php
                                 if (isset($txt_error) && $txt_error != "") {
