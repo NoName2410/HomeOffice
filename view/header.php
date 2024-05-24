@@ -48,7 +48,7 @@
 
                     <?php
                     if (isset($_SESSION['username']) && ($_SESSION['username'] != "")) {
-                        echo '<li><a class="nav-link" href="index.php?act=userinfo">' . $_SESSION['username'] . '</a></li>';
+                        echo '<li><a class="nav-link" href="index.php?act=userinfo"><img src="images/user.svg"></a></li>';
                         echo '
                         <li style="margin-right: 20px;"><a class="nav-link" href="cart.php"><img src="images/cart.svg"></a></li>
                         <li style="margin-right: 20px;"><a class="nav-link" href="index.php?act=thoat" name="exit">Logout</a></li>';

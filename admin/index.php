@@ -5,6 +5,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
     include "../model/connectdb.php";
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
+    include "../model/user.php";
 
     include "views/header.php";
     if (isset($_GET['act'])) {
@@ -47,11 +48,32 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
             case 'sanpham':
                 include "views/sanpham.php";
                 break;
-            case 'tintuc':
-                include "views/tintuc.php";
-                break;
             case 'taikhoan':
-                include "views/taikhoan.php";
+                $kq = getall_tk();
+                include "views/user.php";
+                break;
+            case 'deltk':
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    deltk($id);
+                }
+                $kq = getall_tk();
+                include "views/user.php";
+                break;
+            case 'updatetkform':
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    $kqone = getonetk($id);
+                    $kq = getall_tk();
+                    include "views/updatetkform.php";
+                }
+                if (isset($_POST['id'])) {
+                    $id = $_POST['id'];
+                    $user = $_POST['user'];
+                    updatetk($id, $user);
+                    $kq = getall_tk();
+                    include "views/user.php";
+                }
                 break;
             case 'donhang':
                 include "views/donhang.php";

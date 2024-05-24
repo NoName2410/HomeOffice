@@ -4,15 +4,14 @@ ob_start();
 include "../model/connectdb.php";
 include "../model/user.php";
 
-if ((isset($_POST['login'])) && ($_POST['login'])) {
+if ((isset($_POST['signup'])) && ($_POST['signup'])) {
+    $conn = connectdb();
     $user = $_POST['user'];
     $pass = $_POST['pass'];
-    $role = checkuser($user, $pass);
-    $_SESSION['role'] = $role;
-    if ($role == 1) header('location: index.php');
-    else {
-        $txt_error = "Username hoặc Password không tồn tại!";
-    }
+    $email = $_POST['email'];
+    $sql = "INSERT INTO tbl_user (email,user,pass) VALUES ('" . $email . "','" . $user . "','" . $pass . "')";
+    $conn->exec($sql);
+    header("location: login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -57,8 +56,8 @@ if ((isset($_POST['login'])) && ($_POST['login'])) {
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                    <li><a class="nav-link active" href="login.php"><img src="../images/user.svg"></a></li>
-                    <li><a class="nav-link" href="cart.php"><img src="../images/cart.svg"></a></li>
+                    <li style="margin-right: 20px;"><a class="nav-link" href="login.php">Login</a></li>
+                    <li style="margin-right: 20px;"><a class="nav-link" href="signup.php">Signup</a></li>
                 </ul>
             </div>
         </div>
@@ -77,7 +76,7 @@ if ((isset($_POST['login'])) && ($_POST['login'])) {
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                             </svg>
-                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                            <form action="index.php?act=signup" method="post">
                                 <input style="margin:0 auto;max-width:500px;" type="email" name="email" required class="form-control my-4 py-2" placeholder="Email">
                                 <input style="margin:0 auto;max-width:500px;" type="text" name="user" required class="form-control my-4 py-2" placeholder="Username">
                                 <input style="margin:0 auto;max-width:500px;" type="password" name="pass" required class="form-control my-4 py-2" placeholder="Password">

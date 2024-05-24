@@ -35,13 +35,11 @@
                     </li>
                     <li><a class="nav-link" href="index.php?act=danhmuc">Bảo trì danh mục</a></li>
                     <li><a class="nav-link" href="index.php?act=sanpham">Bảo trì sản phẩm</a></li>
-                    <li><a class="nav-link" href="index.php?act=tintuc">Bảo trì tin tức</a></li>
                     <li><a class="nav-link" href="index.php?act=taikhoan">Quản lý tài khoản</a></li>
                     <li><a class="nav-link" href="index.php?act=donhang">Quản lý đơn hàng</a></li>
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                    <li><a class="nav-link active" href="login.php"><img src="../images/user.svg"></a></li>
                     <li><a class="nav-link active" href="../index.php?act=thoat" name="exit"><img src="../images/logout.svg"></a></li>
                 </ul>
             </div>
