@@ -24,6 +24,9 @@ switch ($_GET['act']) {
 		}
 		include "login.php";
 		break;
+	case 'signup':
+		include "signup.php";
+		break;
 	case 'shop':
 		include "shop.php";
 		break;
