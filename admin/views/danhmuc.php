@@ -1,9 +1,5 @@
 <div class="main">
     <h2>DANH MỤC</h2>
-    <form action="index.php?act=adddm" method="post">
-        <input type="text" name="tendm">
-        <input type="submit" value="Thêm mới" name="themmoi">
-    </form>
     <table>
         <tr>
             <th>STT</th>
@@ -26,6 +22,15 @@
                     </tr>';
                 $i++;
             }
+            echo '<form action="index.php?act=adddm" method="post">
+                        <tr>
+                        <td>' . $i . '</td>
+                        <td><input type="text" name="tendm"></td>
+                        <td><input type="text" name="uutien"></td>
+                        <td><input type="text" name="hienthi"></td>
+                        <td><input type="submit" value="Thêm mới" name="themmoi"></td>
+                        </tr>
+                    </form>';
         }
         ?>
     </table>
