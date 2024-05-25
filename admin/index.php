@@ -17,7 +17,9 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
             case 'adddm':
                 if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                     $tendm = $_POST['tendm'];
-                    themdm($tendm);
+                    $uutien = $_POST['uutien'];
+                    $hienthi = $_POST['hienthi'];
+                    themdm($tendm, $uutien, $hienthi);
                 }
                 $kq = getall_dm();
                 include "views/danhmuc.php";
@@ -40,7 +42,9 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                 if (isset($_POST['id'])) {
                     $id = $_POST['id'];
                     $tendm = $_POST['tendm'];
-                    updatedm($id, $tendm);
+                    $uutien = $_POST['uutien'];
+                    $hienthi = $_POST['hienthi'];
+                    updatedm($id, $tendm, $uutien, $hienthi);
                     $kq = getall_dm();
                     include "views/danhmuc.php";
                 }
@@ -49,6 +53,19 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                 include "views/sanpham.php";
                 break;
             case 'taikhoan':
+                $kq = getall_tk();
+                include "views/user.php";
+                break;
+            case 'addtk':
+                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                    $name = $_POST['name'];
+                    $address = $_POST['address'];
+                    $email = $_POST['email'];
+                    $user = $_POST['user'];
+                    $pass = $_POST['pass'];
+                    $role = $_POST['role'];
+                    themtk($name,$address,$email,$user,$pass,$role);
+                }
                 $kq = getall_tk();
                 include "views/user.php";
                 break;
@@ -69,8 +86,13 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                 }
                 if (isset($_POST['id'])) {
                     $id = $_POST['id'];
+                    $name = $_POST['name'];
+                    $address = $_POST['address'];
+                    $email = $_POST['email'];
+                    $role = $_POST['role'];
                     $user = $_POST['user'];
-                    updatetk($id, $user);
+                    $pass = $_POST['pass'];
+                    updatetk($id, $name, $address, $email, $user, $pass, $role);
                     $kq = getall_tk();
                     include "views/user.php";
                 }

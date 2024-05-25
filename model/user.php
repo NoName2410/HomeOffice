@@ -20,10 +20,18 @@ function getuserinfo($user, $pass)
     else $kq;
 }
 
-function updatetk($id, $user)
+function themtk($name, $address, $email, $user, $pass, $role)
 {
     $conn = connectdb();
-    $sql = "UPDATE tbl_user SET user='" . $user . "' WHERE id=" . $id;
+    $sql = "INSERT INTO tbl_user (name,address,email,user,pass,role) VALUES ('" . $name . "','" . $address . "','" . $email . "','" . $user . "','" . $pass . "','" . $role . "')";
+    // use exec() because no results are returned
+    $conn->exec($sql);
+}
+
+function updatetk($id, $name, $address, $email, $user, $pass, $role)
+{
+    $conn = connectdb();
+    $sql = "UPDATE tbl_user SET name='".$name."',address='".$address."',email='".$email."', user='" . $user . "', pass='" . $pass . "', role='" . $role . "' WHERE id=" . $id;
 
     // Prepare statement
     $stmt = $conn->prepare($sql);

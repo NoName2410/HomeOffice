@@ -1,17 +1,19 @@
 <?php
 
-function themdm($tendm)
+function themdm($tendm, $uutien, $hienthi)
 {
     $conn = connectdb();
-    $sql = "INSERT INTO tbl_danhmuc (tendm) VALUES ('" . $tendm . "')";
+    $sql = "INSERT INTO tbl_danhmuc (tendm,uutien,hienthi) VALUES ('" . $tendm . "','" . $uutien . "','" . $hienthi . "')";
     // use exec() because no results are returned
     $conn->exec($sql);
 }
 
-function updatedm($id, $tendm)
+function updatedm($id, $tendm, $uutien, $hienthi)
 {
     $conn = connectdb();
-    $sql = "UPDATE tbl_danhmuc SET tendm='" . $tendm . "' WHERE id=" . $id;
+    $sql = "UPDATE tbl_danhmuc
+    SET tendm='" . $tendm . "', uutien='" . $uutien . "', hienthi='" . $hienthi . "'
+    WHERE id=" . $id . ";";
 
     // Prepare statement
     $stmt = $conn->prepare($sql);
