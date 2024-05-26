@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 23, 2024 at 07:49 AM
+-- Generation Time: May 26, 2024 at 03:55 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -53,8 +53,9 @@ CREATE TABLE `tbl_danhmuc` (
 --
 
 INSERT INTO `tbl_danhmuc` (`id`, `tendm`, `uutien`, `hienthi`) VALUES
-(11, 'danh muc', 0, 1),
-(12, '', 0, 1);
+(1, 'ban_hoc', 0, 1),
+(13, 'ke_sach', 0, 1),
+(15, 'ghe_cong_thai_hoc', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -106,10 +107,10 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id`, `name`, `address`, `email`, `user`, `pass`, `role`) VALUES
-(5, NULL, NULL, '', '', '', 0),
 (6, NULL, NULL, '', 'admin', '123', 1),
-(7, NULL, NULL, '', '', '', 0),
-(8, NULL, NULL, '', 'user', '456', 0);
+(8, NULL, NULL, '', 'user', '456', 0),
+(9, NULL, NULL, 'jfalh@gl.com', 'user1', '789', 0),
+(12, '', '', '', 'user2', '135', 1);
 
 --
 -- Indexes for dumped tables
@@ -163,7 +164,7 @@ ALTER TABLE `tbl_chitietdonhang`
 -- AUTO_INCREMENT for table `tbl_danhmuc`
 --
 ALTER TABLE `tbl_danhmuc`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_donhang`
@@ -181,7 +182,7 @@ ALTER TABLE `tbl_sanpham`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
