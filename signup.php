@@ -34,11 +34,6 @@ include "view/header.php"
                                 <input class="btn btn-primary" type="submit" name="signup" value="Sign up">
                                 <a href="login.php" class="nav-link">Had account already? Sign in now!</a>
                             </div>
-                            <?php
-                            if (isset($txt_error) && $txt_error != "") {
-                                echo "<font color='red'>" . $txt_error . "</font>";
-                            }
-                            ?>
                         </form>
                     </div>
                 </div>

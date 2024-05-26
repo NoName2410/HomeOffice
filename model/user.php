@@ -16,8 +16,7 @@ function getuserinfo($user, $pass)
     $stmt->execute();
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $kq = $stmt->fetchAll();
-    if (count($kq) > 0) return $kq[0]['role'];
-    else $kq;
+    return $kq ? $kq : null;
 }
 
 function themtk($name, $address, $email, $user, $pass, $role)
