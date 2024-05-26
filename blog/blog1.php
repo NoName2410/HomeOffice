@@ -18,11 +18,11 @@
 	<meta name="keywords" content="bootstrap, bootstrap4" />
 
 	<!-- Bootstrap CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMt23cez/3paNdF+ZiBdbCBF1Z6KNNFjc4xJ6mj" crossorigin="anonymous">
-	<link href="css/tiny-slider.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+	<link href="../css/tiny-slider.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
 	<title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
 </head>
 
@@ -72,7 +72,7 @@
 				</div>
 				<div class="col-lg-7">
 					<div class="hero-img-wrap">
-						<img src="images/couch.png" class="img-fluid">
+						<img src="../images/couch.png" class="img-fluid">
 					</div>
 				</div>
 			</div>
@@ -84,46 +84,20 @@
 
 	<!-- Start Blog Section -->
 	<div class="blog-section">
-		<div class="container">
+	<div class="row">
 
-			<div class="row">
+			<section class="post-detail-header">
+            <h2>Bài Viết 1: Trang trí phòng khách hiện đại</h2>
+            <p class="date"><?php echo date("d/m/Y"); ?></p>
+        </section>
+        <section class="post-detail">
+            <img src="../images/post-1.jpg" alt="Lựa chọn bàn ghế cho phòng ăn">
+            <p>Phòng khách là nơi thể hiện phong cách của gia chủ. Trong bài viết này, chúng tôi sẽ chia sẻ những cách để trang trí phòng khách theo phong cách hiện đại...</p>
+            <p>...</p>
+        </section>
 
-				<div class="col-12 col-sm-6 col-md-4 mb-5">
-					<div class="post-entry">
-						<a href="blog/blog1.php" class="post-thumbnail"><img src="images/post-1.jpg" alt="Image" class="img-fluid"></a>
-						<div class="post-content-entry">
-							<h3><a href="#">Trang trí phòng khách hiện đại </a></h3>
-							<div class="meta">
-								<span>by <a href="#">Nguyễn Chiến</a></span> <span>on <a href="#"><?php echo date("d/m/Y"); ?></a></span>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<div class="col-12 col-sm-6 col-md-4 mb-5">
-					<div class="post-entry">
-						<a href="blog/blog2.php" class="post-thumbnail"><img src="images/post-2.jpg" alt="Image" class="img-fluid"></a>
-						<div class="post-content-entry">
-							<h3><a href="#">Lựa chọn bàn ghế phù hợp cho phòng ăn</a></h3>
-							<div class="meta">
-								<span>by <a href="#">Thanh Bình</a></span> <span>on <a href="#"><?php echo date("d/m/Y"); ?></a></span>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<div class="col-12 col-sm-6 col-md-4 mb-5">
-					<div class="post-entry">
-						<a href="blog/blog3.php" class="post-thumbnail"><img src="images/post-3.jpg" alt="Image" class="img-fluid"></a>
-						<div class="post-content-entry">
-							<h3><a href="#">Sắp xếp nội thất cho những căn phòng nhỏ</a></h3>
-							<div class="meta">
-								<span>by <a href="#">Đức Lương</a></span> <span>on <a href="#"><?php echo date("d/m/Y"); ?></a></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 	<!-- End Blog Section -->
@@ -133,7 +107,7 @@
 		<div class="container relative">
 
 			<div class="sofa-img">
-				<img src="images/sofa.png" alt="Image" class="img-fluid">
+				<img src="../images/sofa.png" alt="Image" class="img-fluid">
 			</div>
 
 
