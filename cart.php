@@ -8,7 +8,7 @@ include "view/header.php";
 		<div class="row justify-content-between">
 			<div class="col-lg-5">
 				<div class="intro-excerpt">
-					<h1>Cart</h1>
+					<h1>GIỎ HÀNG CỦA BẠN</h1>
 				</div>
 			</div>
 			<div class="col-lg-7">
@@ -24,19 +24,22 @@ include "view/header.php";
 		<div class="row mb-5">
 			<form class="col-md-12" method="post">
 				<div class="site-blocks-table">
+				            <tr>
+							    <th>Sản phẩm đã thêm</th>
+							</tr>
 					<table class="table">
 						<thead>
 							<tr>
-								<th class="product-thumbnail">Image</th>
-								<th class="product-name">Product</th>
-								<th class="product-price">Price</th>
-								<th class="product-quantity">Quantity</th>
-								<th class="product-total">Total</th>
-								<th class="product-remove">Remove</th>
+								<th class="product-thumbnail">Hình ảnh</th>
+								<th class="product-name">Sản phẩm</th>
+								<th class="product-price">Giá tiền</th>
+								<th class="product-quantity">Số lượng</th>
+								<th class="product-total">Tổng tiền</th>
+								<th class="product-remove">Xóa </th>
 							</tr>
 						</thead>
 						<tbody>
-							<!-- <tr>
+							 <tr>
 								<td class="product-thumbnail">
 									<img src="images/product-1.png" alt="Image" class="img-fluid">
 								</td>
@@ -82,7 +85,7 @@ include "view/header.php";
 								</td>
 								<td>$49.00</td>
 								<td><a href="#" class="btn btn-black btn-sm">X</a></td>
-							</tr> -->
+							</tr> 
 						</tbody>
 					</table>
 				</div>
@@ -117,7 +120,7 @@ include "view/header.php";
 					<div class="col-md-7">
 						<div class="row">
 							<div class="col-md-12 text-right border-bottom mb-5">
-								<h3 class="text-black h4 text-uppercase">Cart Totals</h3>
+								<h3 class="text-black h4 text-uppercase">Tổng giỏ hàng</h3>
 							</div>
 						</div>
 						<div class="row mb-3">
