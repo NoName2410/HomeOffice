@@ -20,11 +20,6 @@ include "view/header.php";
                                 <input class="btn btn-primary" type="submit" name="login" value="Login">
                                 <a href="signup.php" class="nav-link">Don't have account yet? Sign up now!</a>
                             </div>
-                            <?php
-                            if (isset($txt_error) && $txt_error != "") {
-                                echo "<font color='red'>" . $txt_error . "</font>";
-                            }
-                            ?>
                         </form>
                     </div>
                 </div>

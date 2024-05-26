@@ -36,7 +36,7 @@ include "view/header.php";
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							<!-- <tr>
 								<td class="product-thumbnail">
 									<img src="images/product-1.png" alt="Image" class="img-fluid">
 								</td>
@@ -82,7 +82,7 @@ include "view/header.php";
 								</td>
 								<td>$49.00</td>
 								<td><a href="#" class="btn btn-black btn-sm">X</a></td>
-							</tr>
+							</tr> -->
 						</tbody>
 					</table>
 				</div>
@@ -125,7 +125,7 @@ include "view/header.php";
 								<span class="text-black">Subtotal</span>
 							</div>
 							<div class="col-md-6 text-right">
-								<strong class="text-black">$230.00</strong>
+								<strong class="text-black"></strong>
 							</div>
 						</div>
 						<div class="row mb-5">
@@ -133,7 +133,7 @@ include "view/header.php";
 								<span class="text-black">Total</span>
 							</div>
 							<div class="col-md-6 text-right">
-								<strong class="text-black">$230.00</strong>
+								<strong class="text-black"></strong>
 							</div>
 						</div>
 

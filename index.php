@@ -13,13 +13,11 @@ switch ($_GET['act']) {
 			if ($role == 1) {
 				$_SESSION['role'] = $role;
 				header('location: admin/index.php');
-			} else if ($role == 0) {
-				$_SESSION['role'] = $role;
-				$_SESSION['iduser'] = $kq[0]['id'];
-				$_SESSION['username'] = $kq[0]['user'];
-				header("location: index.php");
 			} else {
-				$txt_error = "Username hoặc Password không tồn tại!";
+				$_SESSION['role'] = $role;
+				$_SESSION['id'] = $kq[0]['id'];
+				$_SESSION['user'] = $kq[0]['user'];
+				header("location: index.php");
 			}
 		}
 		include "login.php";
@@ -42,12 +40,15 @@ switch ($_GET['act']) {
 	case 'contact':
 		include "contact.php";
 		break;
+	case 'cart':
+		include "cart.php";
+		break;
 	case 'thoat':
-		if (isset($_SESSION['role'])){
+		if (isset($_SESSION['role'])) {
 			unset($_SESSION['role']);
 			unset($_SESSION['iduser']);
 			unset($_SESSION['username']);
-		} 
+		}
 		header('location: login.php');
 		break;
 	default:
