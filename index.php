@@ -3,6 +3,8 @@ session_start();
 ob_start();
 include "model/connectdb.php";
 include "model/user.php";
+include "model/sanpham.php";
+$spshop=getall_sp();
 switch ($_GET['act']) {
 	case 'login':
 		if ((isset($_POST['login'])) && ($_POST['login'])) {
