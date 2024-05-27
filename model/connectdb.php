@@ -3,7 +3,7 @@ function connectdb()
 {
     $servername = "localhost";
     $username = "root";
-    $password = "123456";
+    $password = "2021601242";
 
     try {
         $conn = new PDO("mysql:host=$servername;dbname=homeoffice", $username, $password);
