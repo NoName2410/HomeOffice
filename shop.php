@@ -34,7 +34,7 @@
 				foreach($spshop as $sp){
 					echo'
 						<div class="col-12 col-md-4 col-lg-3 mb-5">
-							<a class="product-item" href="./product.php?id='.$sp['id'].'">
+							<a class="product-item" href="./product-detail.php?id='.$sp['id'].'">
 								<img src="./images/'.$sp['img'].'" class="img-fluid product-thumbnail">
 								<h3 class="product-title">'.$sp['tensp'].'</h3>
 								<strong class="product-price">'.$sp['gia'].'₫</strong>

@@ -1,3 +1,9 @@
+/*
+* Template Name: UntreeStore
+* Template Author: Untree.co
+* Author URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 body {
   overflow-x: hidden;
@@ -150,7 +156,6 @@ a.more {
 .hero p {
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 30px;
-  text-align: justify;
 }
 .hero .hero-img-wrap {
   position: relative;
@@ -633,7 +638,7 @@ a.more {
 .blog-section .post-entry a {
   text-decoration: none;
 }
-section .blog-section .post-entry .post-thumbnail {
+.blog-section .post-entry .post-thumbnail {
   display: block;
   margin-bottom: 20px;
 }
@@ -950,7 +955,15 @@ textarea {
 }
 
 .blog-posts {
-  margin-top: 100px;
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+
+.sidebar-heading h2 {
+  color: #20232e;
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 /* .input_log{
