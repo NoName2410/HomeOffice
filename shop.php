@@ -4,18 +4,24 @@
 
 <!-- Start Hero Section -->
 <div class="hero">
-	<div class="container">
-		<div class="row justify-content-between">
-			<div class="col-lg-5">
-				<div class="intro-excerpt">
-					<h1>Shop</h1>
-				</div>
-			</div>
-			<div class="col-lg-7">
-
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="intro-excerpt">
+                    <h1>PHONG CÁCH HIỆN ĐẠI</h1>
+                    <p class="mb-4 hero-content">Sáng tạo một không gian sống đẹp và tiện nghi với các sản phẩm chất lượng của Come Home.
+									 Đến với Come Home, bạn luôn có thể dễ dàng tìm thấy bất kỳ sản phẩm cần thiết phù hợp với nhu cầu và ngân sách của bạn.
+									 Chúng tôi luôn đặt chất lượng và sự thoải mái tiện dụng của sản phẩm lên hàng đầu.</p>
+                    <p><a href="index.php" class="btn btn-secondary me-2">Trang chủ</a></p>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="hero-img-wrap">
+                    <img src="images/couch.png" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- End Hero Section -->
 
