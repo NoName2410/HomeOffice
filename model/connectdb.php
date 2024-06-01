@@ -4,7 +4,6 @@ function connectdb()
     $servername = "localhost";
     $username = "root";
     $password = "12345678";
-
     try {
         $conn = new PDO("mysql:host=$servername;dbname=homeoffice", $username, $password);
         // set the PDO error mode to exception
