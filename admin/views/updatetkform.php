@@ -1,10 +1,5 @@
 <div class="main">
     <h2>CẬP NHẬT TÀI KHOẢN</h2>
-    <!-- <form action="index.php?act=updatetkform" method="post">
-        <input type="text" name="user" value="<?= $kqone[0]['user'] ?>">
-        <input type="hidden" name="id" value="<?= $kqone[0]['id'] ?>">
-        <input type="submit" value="Cập nhật" name="capnhat">
-    </form> -->
     <table>
         <tr>
             <th>Name</th>

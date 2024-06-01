@@ -4,7 +4,7 @@ ob_start();
 include "model/connectdb.php";
 include "model/user.php";
 include "model/sanpham.php";
-$spshop=getall_sp();
+$spshop = getall_sp();
 switch ($_GET['act']) {
 	case 'login':
 		if ((isset($_POST['login'])) && ($_POST['login'])) {
@@ -19,6 +19,10 @@ switch ($_GET['act']) {
 				$_SESSION['role'] = $role;
 				$_SESSION['id'] = $kq[0]['id'];
 				$_SESSION['user'] = $kq[0]['user'];
+				$_SESSION['name'] = $kq[0]['name'];
+				$_SESSION['address'] = $kq[0]['address'];
+				$_SESSION['email'] = $kq[0]['email'];
+				$_SESSION['pass'] = $kq[0]['pass'];
 				header("location: index.php");
 			}
 		}
@@ -26,6 +30,27 @@ switch ($_GET['act']) {
 		break;
 	case 'signup':
 		include "signup.php";
+		break;
+	case 'account':
+		if (isset($_SESSION['id'])) {
+			$id = $_SESSION['id'];
+			$kqone = getonetk($id);
+			if (isset($_POST['capnhat'])) {
+				$name = $_POST['name'];
+				$address = $_POST['address'];
+				$email = $_POST['email'];
+				$user = $_POST['user'];
+				$pass = $_POST['pass'];
+				updatetk($id, $name, $address, $email, $user, $pass, 0);
+				$_SESSION['user'] = $user;
+				$_SESSION['name'] = $name;
+				$_SESSION['address'] = $address;
+				$_SESSION['email'] = $email;
+				$_SESSION['pass'] = $_POST['pass'];
+				header("location: index.php");
+			}
+			include "account.php";
+		}
 		break;
 	case 'shop':
 		include "shop.php";
@@ -48,8 +73,11 @@ switch ($_GET['act']) {
 	case 'thoat':
 		if (isset($_SESSION['role'])) {
 			unset($_SESSION['role']);
-			unset($_SESSION['iduser']);
-			unset($_SESSION['username']);
+			unset($_SESSION['user']);
+			unset($_SESSION['adress']);
+			unset($_SESSION['name']);
+			unset($_SESSION['email']);
+			unset($_SESSION['pass']);
 		}
 		header('location: login.php');
 		break;
