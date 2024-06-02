@@ -949,6 +949,55 @@ textarea {
   background: rgba(59, 93, 80, 0.2);
 }
 
+.blog-posts {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.sidebar-heading h2 {
+  color: #20232e;
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: 500;
+  font-size: 18px;
+  color: #212529;
+}
+
+.contact-us .contact-form select,
+.contact-us .contact-form input {
+	width: 165.95px;
+	height: 46px;
+	border: 1px solid #cecece;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: #7a7a7a;
+	outline: none;
+	padding: 0px 15px;
+	margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.content p{
+  text-align: justify;
+}
+
+.btn-radius{
+  border-radius: 10px;
+}
+
+.quantity{
+  width: 200px;
+}
+
+.description{
+  margin-bottom: 200px;
+}
+
 /* .input_log{
   margin: 0 auto;
   max-width: 400px;
