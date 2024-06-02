@@ -42,8 +42,8 @@
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
                     <?php
-                    if (isset($_SESSION['user']) && ($_SESSION['user'] != "")) {
-                        echo '<li><a class="nav-link" href="index.php?act=userinfo">'.$_SESSION['user'].'</a></li>
+                    if (isset($_SESSION['id']) && ($_SESSION['id'] != "")) {
+                        echo '<li><a class="nav-link" href="index.php?act=account">'.$_SESSION['name'].'</a></li>
                         <li style="margin-right: 20px;"><a class="nav-link" href="index.php?act=cart"><img src="images/cart.svg"></a></li>
                         <li style="margin-right: 20px;"><a class="nav-link" href="index.php?act=thoat" name="exit">Logout</a></li>';
                     } else {
