@@ -11,6 +11,7 @@ if ((isset($_POST['signup'])) && ($_POST['signup'])) {
     $email = $_POST['email'];
     $user = $_POST['user'];
     $pass = $_POST['pass'];
+
     $sql = "INSERT INTO tbl_user (name,address,email,user,pass) VALUES ('" . $name . "','" . $address . "','" . $email . "','" . $user . "','" . $pass . "')";
     $conn->exec($sql);
     header("location: login.php");

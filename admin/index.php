@@ -179,6 +179,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                 break;
             case 'donhang':
                 $kq = getall_dh();
+                $user = getall_tk();
                 include "views/donhang.php";
                 break;
             // case 'adddh':
@@ -200,11 +201,20 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                 $kq = getall_dh();
                 include "views/donhang.php";
                 break;
+            case 'statusdh':
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    statusdh($id);
+                }
+                $kq = getall_dh();
+                include "views/donhang.php";
+                break;
             case 'updatedhform':
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
                     $kqone = getonedh($id);
                     $kq = getall_dh();
+                    $user = getall_tk();
                     include "views/updatedhform.php";
                 }
                 if (isset($_POST['id'])) {
@@ -215,6 +225,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                     $status = $_POST['status'];
                     updatedh($id, $idkh, $payment, $address,$status);
                     $kq = getall_dh();
+                    $user = getall_tk();
                     include "views/donhang.php";
                 }
                 break;
