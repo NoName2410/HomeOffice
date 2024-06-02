@@ -8,9 +8,10 @@ if ((isset($_POST['signup'])) && ($_POST['signup'])) {
     $conn = connectdb();
     $name = $_POST['name'];
     $address = $_POST['address'];
+    $email = $_POST['email'];
     $user = $_POST['user'];
     $pass = $_POST['pass'];
-    $email = $_POST['email'];
+
     $sql = "INSERT INTO tbl_user (name,address,email,user,pass) VALUES ('" . $name . "','" . $address . "','" . $email . "','" . $user . "','" . $pass . "')";
     $conn->exec($sql);
     header("location: login.php");
@@ -29,8 +30,8 @@ include "view/header.php"
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                         </svg>
                         <form action="index.php?act=signup" method="post">
-                            <input style="margin:0 auto;max-width:500px;" type="text" name="name" required class="form-control my-4 py-2" placeholder="Name">
-                            <input style="margin:0 auto;max-width:500px;" type="text" name="address" required class="form-control my-4 py-2" placeholder="Address">
+                            <input style="margin:0 auto;max-width:500px;" type="text" name="name" required class="form-control my-4 py-2" placeholder="Họ tên">
+                            <input style="margin:0 auto;max-width:500px;" type="text" name="address" required class="form-control my-4 py-2" placeholder="Địa chỉ">
                             <input style="margin:0 auto;max-width:500px;" type="email" name="email" required class="form-control my-4 py-2" placeholder="Email">
                             <input style="margin:0 auto;max-width:500px;" type="text" name="user" required class="form-control my-4 py-2" placeholder="Username">
                             <input style="margin:0 auto;max-width:500px;" type="password" name="pass" required class="form-control my-4 py-2" placeholder="Password">
