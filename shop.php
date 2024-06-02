@@ -37,8 +37,7 @@
 							<a class="product-item" href="./product-detail.php?id='.$sp['id'].'">
 								<img src="./images/'.$sp['img'].'" class="img-fluid product-thumbnail">
 								<h3 class="product-title">'.$sp['tensp'].'</h3>
-								<strong class="product-price">'.$sp['gia'].'₫</strong>
-			
+								<strong class="product-price">'.$sp['gia'].'₫</strong>			
 								<span class="icon-cross">
 									<img src="images/cross.svg" class="img-fluid">
 								</span>

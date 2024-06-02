@@ -28,6 +28,7 @@ function getonesp($id)
     $kq = $stmt->fetchAll();
     return $kq;
 }
+
 function delsp($id){
     $conn = connectdb();
     $sql = "DELETE FROM tbl_sanpham WHERE id=".$id;

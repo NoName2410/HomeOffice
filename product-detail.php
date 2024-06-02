@@ -9,63 +9,16 @@
         <div class="row">
           <div class="col-md-7">
             <div>
-              <h2 class="mb-4 section-title">Sản phẩm A</h2>
+              <img src="<?php echo'./images/'.$sp3['img'].'' ?>" alt="" class="img-fluid wc-image">
             </div>
-            <div>
-              <img src="assets/images/product-1-720x480.jpg" alt="" class="img-fluid wc-image">
-            </div>
-            <br>
-            <div class="row">
-              <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/product-1-720x480.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-              <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/product-2-720x480.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-              <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/product-3-720x480.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-
-              <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/product-4-720x480.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-              <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/product-5-720x480.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-              <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/product-6-720x480.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-            </div>
-
-            <br>
           </div>
-
           <div class="col-md-5">
             <div class="sidebar-item recent-posts">
               <div class="sidebar-heading">
-                <h2 class="section-title">Info</h2>
+                <h2 class="section-title">Sản phẩm A</h2>
               </div>
-
               <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed velit eveniet quibusdam animi eos, cum! Alias, dicta. Minima repudiandae sequi iste, nostrum! Neque temporibus officiis harum esse aperiam voluptate? Quibusdam.</p>
+                <p>Một trong những sản phẩm tốt nhất của công ty chúng tôi với thiết kế hiện đại</p>
               </div>
             </div>
             <br>
@@ -73,20 +26,21 @@
             <div class="contact-us">
               <div class="sidebar-item contact-form">
                 <div class="sidebar-heading">
-                  <h2 class="section-title">Add to Cart</h2>
+                  <h2 class="section-title">Thêm vào giỏ</h2>
                 </div>
                 <div class="content">
                   <form id="contact" action="" method="post">
                     <div class="row">
-                      <div class="col-md-6 col-sm-12">
+                      <div class="col-md-6 col-sm-12 quantity">
                         <fieldset>
-                          <label for="">Quantity</label>
+                          <label for="">Số lượng</label>
                           <input type="text" value="1" required="">
                         </fieldset>
                       </div>
                       <div class="col-lg-12">
                         <fieldset>
-                          <button type="submit" id="form-submit" class="main-button">Add to Cart</button>
+                          <button class="btn btn-primary btn-radius me-2 my-2" type="submit" id="add-to-cart" class="main-button">Thêm vào giỏ</button>
+                          <button class="btn btn-primary btn-radius me-2 my-2" type="submit" id="buy-nơ" class="main-button">Mua ngay</button>
                         </fieldset>
                       </div>
                     </div>
@@ -99,6 +53,19 @@
         </div>
       </div>
     </section>
+
+<div class="section contact-us description">
+    <div class="container">
+    <div class="sidebar-item recent-posts">
+        <div class="sidebar-heading">
+        <h2>Description</h2>
+        </div>
+        <div class="content">
+          <p>Sản phẩm A là một sản phẩm vô cùng phổ thông, được thiết kế và gia công bằng gỗ xoan cao cấp, có khả năng chống ẩm mốc cao</p>
+        </div>
+    </div>
+    </div>
+</div>
 <?php
   include "view/footer.php";
 ?>    
