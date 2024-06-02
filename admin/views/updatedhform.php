@@ -21,7 +21,26 @@
                 </td>
                 <td><input type="text" name="payment" value="<?= $kqone[0]['payment'] ?>"></td>
                 <td><input type="text" name="address" value="<?= $kqone[0]['address'] ?>"></td>
-                <td><input type="text" name="status" value="<?= $kqone[0]['status'] ?>"></td>
+                <td>
+                    <select name="status">
+                        <?php 
+                            $statuscur = $kqone[0]['status'];
+                            if($statuscur == 1)
+                            {
+                                echo '<option value="1" selected>Đơn hàng mới</option>';
+                                echo '<option value="0">Đã xem</option>';
+                            }
+                                
+                            if($statuscur == 0)
+                            {
+                                echo '<option value="1" >Đơn hàng mới</option>';
+                                echo '<option value="0" selected>Đã xem</option>';
+                            }
+                            
+                                
+                        ?>
+                    </select>
+                </td>
                 <td><input type="submit" value="Cập nhật" name="capnhat"></td>
             </tr>
         </form>

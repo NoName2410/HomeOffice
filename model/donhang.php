@@ -1,4 +1,16 @@
 <?php
+function statusdh($id)
+{
+    $conn = connectdb();
+    $sql = "UPDATE tbl_donhang
+    SET status= 0
+    WHERE id=" . $id . ";";
+    // Prepare statement
+    $stmt = $conn->prepare($sql);
+
+    // execute the query
+    $stmt->execute();
+}
 function updatedh($id, $idkh, $payment, $address,$status)
 {
     $conn = connectdb();
