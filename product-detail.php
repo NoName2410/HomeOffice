@@ -1,5 +1,19 @@
 <?php
+  include "model/sanpham.php";
+  include "model/danhmuc.php";
+  include "model/connectdb.php";
 	include "view/header.php";
+  if(isset($_GET['id'])&&($_GET['id']>0)){
+    $kq=getonesp($_GET['id']);
+    $dsdm = getall_dm();
+    $iddmcur = $kq[0]['iddm'];
+      if(isset($dsdm)){
+        foreach($dsdm as $dm){
+          if($dm['id'] == $iddmcur)
+            $tendm = $dm['tendm'];
+        } 
+     }
+  }
 ?>
 
 <!-- Start Product Section -->
@@ -9,16 +23,17 @@
         <div class="row">
           <div class="col-md-7">
             <div>
-              <img src="<?php echo'./images/'.$sp3['img'].'' ?>" alt="" class="img-fluid wc-image">
+              <img src="<?php echo'./images/'.$kq[0]['img'].'' ?>" alt="" class="img-fluid wc-image">
             </div>
           </div>
           <div class="col-md-5">
             <div class="sidebar-item recent-posts">
               <div class="sidebar-heading">
-                <h2 class="section-title">Sản phẩm A</h2>
+                <h2 class="section-title"><?php echo $kq[0]['tensp'] ?></h2>
               </div>
               <div class="content">
-                <p>Một trong những sản phẩm tốt nhất của công ty chúng tôi với thiết kế hiện đại</p>
+                <p style="color: black; font-size: 16px;"><b>Danh Mục: </b><?php echo $tendm ?> </p>
+                <p  style="color: black; font-size: 25px; margin: 0;"><?php echo'<strong class="product-price">'.$kq[0]['gia'].'₫</strong>	';?></p>
               </div>
             </div>
             <br>
