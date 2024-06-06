@@ -28,6 +28,7 @@ function getonesp($id)
     $kq = $stmt->fetchAll();
     return $kq;
 }
+
 function delsp($id){
     $conn = connectdb();
     $sql = "DELETE FROM tbl_sanpham WHERE id=".$id;
@@ -41,7 +42,7 @@ function insert_sp($iddm,$tensp,$gia,$img){
 function getall_sp()
 {
     $conn = connectdb();
-    $stmt = $conn->prepare("SELECT * FROM tbl_sanpham");
+    $stmt = $conn->prepare("SELECT * FROM tbl_sanpham order by id DESC");
     $stmt->execute();
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $kq = $stmt->fetchAll();

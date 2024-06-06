@@ -2,7 +2,6 @@
 <div class="popular-product">
 			<div class="container">
 				<div class="row">
-
 					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
 						<div class="product-item-sm d-flex">
 							<div class="thumbnail">
@@ -41,7 +40,6 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
