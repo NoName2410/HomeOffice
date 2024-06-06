@@ -49,7 +49,7 @@
                       <div class="col-md-6 col-sm-12 quantity">
                         <fieldset>
                           <label for="">Số lượng</label>
-                          <input type="text" value="1" required="">
+                          <input type="text" value="1" required="">Số lượng còn: <?php echo $kq[0]['soluong'] ?>
                         </fieldset>
                       </div>
                       <div class="col-lg-12">
@@ -73,10 +73,10 @@
     <div class="container">
     <div class="sidebar-item recent-posts">
         <div class="sidebar-heading">
-        <h2>Description</h2>
+        <h2>Mô tả sản phẩm</h2>
         </div>
         <div class="content">
-          <p>Sản phẩm A là một sản phẩm vô cùng phổ thông, được thiết kế và gia công bằng gỗ xoan cao cấp, có khả năng chống ẩm mốc cao</p>
+          <p><?php echo $kq[0]['mota'] ?></p>
         </div>
     </div>
     </div>

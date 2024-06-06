@@ -7,29 +7,14 @@
             <th>Tên sản phẩm</th>
             <th>Hình Ảnh</th>
             <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Mô tả</th>
             <th>Hành động</th>
         </tr>
 
         <?php
         if (isset($kq) && (count($kq) >-1)) {
             $i = 1;
-            foreach ($kq as $sp) {
-                $tendm = '';
-            foreach ($dsdm as $d) {
-                if ($sp['iddm'] == $d['id']) {
-                    $tendm = $d['tendm'];
-                }
-            }
-                echo '<tr>
-                        <td>' . $i . '</td>
-                        <td>' . $tendm . '</td>
-                        <td>' . $sp['tensp'] . '</td>
-                        <td><img src="' . $sp['img'] . '" width="80px"></td>
-                        <td>' . $sp['gia'] . '</td>
-                        <td> <a href="index.php?act=updatespform&id=' . $sp['id'] . '">Sửa</a> | <a href="index.php?act=delsp&id=' . $sp['id'] . '">Xóa</a> </td>
-                    </tr>';
-                $i++;
-            }
             echo '<form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
             <tr>
                 <td>' . $i . '</td>
@@ -49,9 +34,31 @@
             }
             echo'
             <td><input type="text" name="gia"></td>
+            <td><input type="text" name="soluong"></td>
+            <td><input type="text" name="mota"></td>
             <td><input type="submit" value="Thêm mới" name="themmoi"></td>
         </tr>
     </form>';
+            foreach ($kq as $sp) {
+                $tendm = '';
+            foreach ($dsdm as $d) {
+                if ($sp['iddm'] == $d['id']) {
+                    $tendm = $d['tendm'];
+                }
+            }
+                echo '<tr>
+                        <td>' . $i . '</td>
+                        <td>' . $tendm . '</td>
+                        <td>' . $sp['tensp'] . '</td>
+                        <td><img src="' . $sp['img'] . '" width="80px"></td>
+                        <td>' . $sp['gia'] . '</td>
+                        <td>' . $sp['soluong'] . '</td>
+                        <td>' . $sp['mota'] . '</td>
+                        <td> <a href="index.php?act=updatespform&id=' . $sp['id'] . '">Sửa</a> | <a href="index.php?act=delsp&id=' . $sp['id'] . '">Xóa</a> </td>
+                    </tr>';
+                $i++;
+            }
+            
         }
         ?>
     </table>
