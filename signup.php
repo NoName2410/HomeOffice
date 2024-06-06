@@ -1,21 +1,4 @@
 <?php
-session_start();
-ob_start();
-include "../model/connectdb.php";
-include "../model/user.php";
-
-if ((isset($_POST['signup'])) && ($_POST['signup'])) {
-    $conn = connectdb();
-    $name = $_POST['name'];
-    $address = $_POST['address'];
-    $email = $_POST['email'];
-    $user = $_POST['user'];
-    $pass = $_POST['pass'];
-
-    $sql = "INSERT INTO tbl_user (name,address,email,user,pass) VALUES ('" . $name . "','" . $address . "','" . $email . "','" . $user . "','" . $pass . "')";
-    $conn->exec($sql);
-    header("location: login.php");
-}
 include "view/header.php"
 ?>
 <!-- Start Hero Section -->
@@ -31,10 +14,15 @@ include "view/header.php"
                         </svg>
                         <form action="index.php?act=signup" method="post">
                             <input style="margin:0 auto;max-width:500px;" type="text" name="name" required class="form-control my-4 py-2" placeholder="Họ tên">
+                            <span style="color:red;display: block;text-align: center;"><?php echo "$nameError" ?></span>
                             <input style="margin:0 auto;max-width:500px;" type="text" name="address" required class="form-control my-4 py-2" placeholder="Địa chỉ">
+                            <span style="color:red;display: block;text-align: center;"><?php echo "$addressError" ?></span>
                             <input style="margin:0 auto;max-width:500px;" type="email" name="email" required class="form-control my-4 py-2" placeholder="Email">
+                            <span style="color:red;display: block;text-align: center;"><?php echo "$emailError" ?></span>
                             <input style="margin:0 auto;max-width:500px;" type="text" name="user" required class="form-control my-4 py-2" placeholder="Username">
+                            <span style="color:red;display: block;text-align: center;"><?php echo "$userError" ?></span>
                             <input style="margin:0 auto;max-width:500px;" type="password" name="pass" required class="form-control my-4 py-2" placeholder="Password">
+                            <span style="color:red;display: block;text-align: center;"><?php echo "$passError" ?></span>
                             <div class="text-center mt-3">
                                 <input class="btn btn-primary" type="submit" name="signup" value="Sign up">
                                 <a href="login.php" class="nav-link">Had account already? Sign in now!</a>

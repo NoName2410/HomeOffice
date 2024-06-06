@@ -15,7 +15,9 @@ include "view/header.php";
                         </svg>
                         <form action="index.php?act=login" method="post">
                             <input style="margin:0 auto;max-width:500px;" type="text" name="user" required class="form-control my-4 py-2" placeholder="Username" required>
+                            <span style="display: block;text-align: center; color:red;"><?php echo $accError?></span>
                             <input style="margin:0 auto;max-width:500px;" type="password" name="pass" required class="form-control my-4 py-2" placeholder="Password" required>
+                            <span style="display: block;text-align: center; color:red;"><?php echo $accError?></span>
                             <div class="text-center mt-3">
                                 <input class="btn btn-primary" type="submit" name="login" value="Login">
                                 <a href="signup.php" class="nav-link">Don't have account yet? Sign up now!</a>
