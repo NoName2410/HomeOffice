@@ -4,7 +4,6 @@ ob_start();
 include "model/connectdb.php";
 include "model/user.php";
 include "model/sanpham.php";
-$spshop=getall_sp();
 switch ($_GET['act']) {
 	case 'login':
 		if ((isset($_POST['login'])) && ($_POST['login'])) {
@@ -53,6 +52,7 @@ switch ($_GET['act']) {
 		}
 		break;
 	case 'shop':
+		$spshop = getall_sp();
 		include "shop.php";
 		break;
 	case 'about':
@@ -73,6 +73,7 @@ switch ($_GET['act']) {
 	case 'thoat':
 		if (isset($_SESSION['role'])) {
 			unset($_SESSION['role']);
+			unset($_SESSION['id']);
 			unset($_SESSION['user']);
 			unset($_SESSION['adress']);
 			unset($_SESSION['name']);
