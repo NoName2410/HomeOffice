@@ -33,20 +33,20 @@ include "view/header.php";
                   <div class="col-md-6 col-sm-12 quantity">
                     <fieldset>
                       <label for="">Số lượng</label>
-                      <input type="number" value="1" required="">Số lượng còn: <?php echo $kq[0]['soluong'] ?>
+                      <input type="number" value="1" required="" min=1 max="50" name="soluong">Số lượng còn: <?php echo $kq[0]['soluong'] ?>
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <input class="btn btn-primary btn-radius me-2 my-2" type="submit" name="addtocart" value="Thêm vào giỏ"></input>
+                      <input type="hidden" name="id" value="<?php echo $kq[0]['id'] ?>">
+                      <input type="hidden" name="tensp" value="<?php echo $kq[0]['tensp'] ?>">
+                      <input type="hidden" name="img" value="<?php echo $kq[0]['img'] ?>">
+                      <input type="hidden" name="gia" value="<?php echo $kq[0]['gia'] ?>">
+                      <input type="submit" name="add_to_cart" value="Thêm vào giỏ" class="btn btn-primary btn-radius me-2 my-2 main-button" style="color:white;">
+                      <!-- <button class="btn btn-primary btn-radius me-2 my-2" type="submit" name="addtocart" class="main-button">Thêm vào giỏ</button> -->
                     </fieldset>
                   </div>
                 </div>
-                <input type="hidden" name="id" value="<?= $kq[0]['id'] ?>">
-                <input type="hidden" name="tensp" value="<?= $kq[0]['tensp'] ?>">
-                <input type="hidden" name="img" value="<?= $kq[0]['img'] ?>">
-                <input type="hidden" name="gia" value="<?= $kq[0]['gia'] ?>">
-                <input type="hidden" name="soluong" value="<?= $kq[0]['soluong'] ?>">
               </form>
             </div>
           </div>
@@ -61,7 +61,12 @@ include "view/header.php";
   <div class="container">
     <div class="sidebar-item recent-posts">
       <div class="sidebar-heading">
-        <h2>Mô tả sản phẩm</h2>
+        <div class="sidebar-heading">
+          <h2>Mô tả sản phẩm</h2>
+        </div>
+        <div class="content">
+          <p><?php echo $kq[0]['mota'] ?></p>
+        </div>
       </div>
       <div class="content">
         <p><?php echo $kq[0]['mota'] ?></p>

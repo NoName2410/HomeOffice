@@ -1,4 +1,16 @@
 <?php
+function addtocart($idsp,$iddh,$slm){
+    $conn = connectdb();
+    $sql = "INSERT INTO tbl_chitietdonhang (idsp, iddh, slm) VALUES ('$idsp','$iddh','$slm')";
+    $conn->exec($sql);
+}
+function taodonhang($id,$payment,$address){
+    $conn = connectdb();
+    $sql = "INSERT INTO tbl_donhang (idkh, payment, address, status) VALUES ('$id','$payment','$address','1')";
+    $conn->exec($sql);
+    $lastid= $conn->lastInsertId();
+    return $lastid;
+}
 function statusdh($id)
 {
     $conn = connectdb();
@@ -46,6 +58,14 @@ function getall_dh()
 {
     $conn = connectdb();
     $stmt = $conn->prepare("SELECT * FROM tbl_donhang");
+    $stmt->execute();
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $kq = $stmt->fetchAll();
+    return $kq;
+}
+function get_cart($iddh){
+    $conn = connectdb();
+    $stmt = $conn->prepare("SELECT * FROM tbl_chitietdonhang WHERE iddh = ".$iddh.""  );
     $stmt->execute();
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $kq = $stmt->fetchAll();

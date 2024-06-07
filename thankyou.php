@@ -30,8 +30,9 @@ include "view/header.php";
 					</svg>
 				</span>
 				<h2 class="display-3 text-black">Thank you!</h2>
-				<p class="lead mb-5">You order was successfuly completed.</p>
-				<p><a href="shop.php" class="btn btn-sm btn-outline-black">Back to shop</a></p>
+				Mã đơn hàng: <?php echo $iddh ?>
+				<p class="lead mb-5">Đơn hàng của bạn đã được thanh toán thành công.</p>
+				<p><a href="index.php" class="btn btn-sm btn-outline-black">Quay lại mua sắm</a></p>
 			</div>
 		</div>
 	</div>
