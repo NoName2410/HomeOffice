@@ -11,6 +11,8 @@
             <th>Tên sản phẩm</th>
             <th>Hình Ảnh</th>
             <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Mô tả</th>
             <th>Hành Động</th>
         </tr>
         <form action="index.php?act=updatespform" method="post" enctype="multipart/form-data">
@@ -43,6 +45,8 @@
                     ?>
                 </td>
                 <td><input type="text" name="gia" value="<?= $spct[0]['gia'] ?>"></td>
+                <td><input type="text" name="soluong" value="<?= $spct[0]['soluong'] ?>"></td>
+                <td><input type="text" name="mota" value="<?= $spct[0]['mota'] ?>"></td>
                 <input type="hidden" name="id" value="<?= $spct[0]['id'] ?>">
                 <td><input type="submit" value="Cập nhật" name="capnhat"></td>
             </tr>
