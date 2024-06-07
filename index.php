@@ -113,6 +113,9 @@ switch ($_GET['act']) {
 	case 'checkout':
 		include "checkout.php";
 		break;
+	case 'thankyou':
+		include "thankyou.php";
+		break;
 	case 'thoat':
 		if (isset($_SESSION['role'])) {
 			unset($_SESSION['role']);

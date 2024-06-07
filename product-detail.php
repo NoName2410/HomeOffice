@@ -21,12 +21,6 @@ include "view/header.php";
                 <p  style="color: black; font-size: 25px; margin: 0;"><?php echo'<strong class="product-price">'.$kq[0]['gia'].'₫</strong>	';?></p>
               </div>
             </div>
-            <br>
-            <br>         
-            <div class="contact-us">
-              <div class="sidebar-item contact-form">
-                <div class="sidebar-heading">
-                  <h2 class="section-title">Thêm vào giỏ</h2>
                 </div>
                 <div class="content">
                   <form id="contact" action="index.php?act=cart" method="post">
