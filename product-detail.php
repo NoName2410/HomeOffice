@@ -17,8 +17,8 @@ include "view/header.php";
             <h2 class="section-title"><?php echo $kq[0]['tensp'] ?></h2>
           </div>
           <div class="content">
-            <p style="color: black; font-size: 16px;"><b>Danh Mục: </b><?php echo $tendm ?> </p>
-            <p style="color: black; font-size: 25px; margin: 0;"><?php echo '<strong class="product-price">' . $kq[0]['gia'] . '₫</strong>	'; ?></p>
+            <p class="category"><b>Danh Mục: </b><?php echo $tendm ?></p>
+            <div><?php echo'<strong class="product-price">'.$kq[0]['gia'].'₫</strong>';?></div>
           </div>
         </div>
         <br>
