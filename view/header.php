@@ -36,7 +36,7 @@
                         <a class="nav-link" href="index.php">Trang chủ</a>
                     </li>
                     <li><a class="nav-link" href="index.php?act=shop">Sản phẩm</a></li>
-                    <li><a class="nav-link" href="index.php?act=about">Về chúng tôi</a></li>
+                    <li><a class="nav-link" href="index.php?act=about">Giới thiệu</a></li>
                     <li><a class="nav-link" href="index.php?act=contact">Liên hệ</a></li>
                 </ul>
 
