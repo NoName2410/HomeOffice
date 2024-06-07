@@ -1,11 +1,13 @@
 <?php
 session_start();
 ob_start();
+if(!isset($_SESSION['cart'])) $_SESSION['cart']=[];
 include "model/connectdb.php";
 include "model/user.php";
 include "model/validation.php";
 include "model/sanpham.php";
 include "model/danhmuc.php";
+include "model/donhang.php";
 switch ($_GET['act']) {
 	case 'login':
 		if ((isset($_POST['login'])) && ($_POST['login'])) {
@@ -77,6 +79,7 @@ switch ($_GET['act']) {
 			include "account.php";
 		}
 		break;
+	
 	case 'shop':
 		$spshop = getall_sp();
 		include "shop.php";
@@ -110,6 +113,34 @@ switch ($_GET['act']) {
 	case 'cart':
 		include "cart.php";
 		break;
+	case 'delcart':
+		echo $_GET['i'];
+		if(isset($_GET['i'])){
+			if((isset($_SESSION['cart']))&& (count($_SESSION['cart'])>0))
+				array_splice($_SESSION['cart'],$_GET['i'],1);
+		}
+		if(isset($_SESSION['cart']) && (count($_SESSION['cart'])>0)){
+			header('location:index.php?act=cart');
+		}else{
+			header('location:index.php');
+		}
+		include "cart.php";
+		break;
+	case 'thanhtoan':
+		if(isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])){
+			$address = $_POST['address'];
+			$payment = $_POST['payment'];
+			$id = $_POST['id'];
+			$iddh = taodonhang($id,$payment,$address);
+			if(isset($_SESSION['cart'])&& (count($_SESSION['cart'])>0)){
+				foreach($_SESSION['cart'] as $item){
+					addtocart($item[0],$iddh,$item[4]);
+				}
+				unset($_SESSION['cart']);
+			}
+		}
+		include "thankyou.php";
+		break;
 	case 'checkout':
 		include "checkout.php";
 		break;
@@ -122,6 +153,7 @@ switch ($_GET['act']) {
 			unset($_SESSION['name']);
 			unset($_SESSION['email']);
 			unset($_SESSION['pass']);
+			
 		}
 		header('location: login.php');
 		break;
