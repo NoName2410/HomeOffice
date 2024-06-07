@@ -21,15 +21,14 @@ include "view/header.php";
             <p style="color: black; font-size: 25px; margin: 0;"><?php echo '<strong class="product-price">' . $kq[0]['gia'] . '₫</strong>	'; ?></p>
           </div>
         </div>
+
         <br>
         <br>
+
         <div class="contact-us">
           <div class="sidebar-item contact-form">
-            <div class="sidebar-heading">
-              <h2 class="section-title">Thêm vào giỏ</h2>
-            </div>
             <div class="content">
-              <form id="contact" action="index.php?act=cart" method="post">
+              <form action="index.php?act=cart" method="post">
                 <div class="row">
                   <div class="col-md-6 col-sm-12 quantity">
                     <fieldset>
@@ -39,10 +38,15 @@ include "view/header.php";
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <button class="btn btn-primary btn-radius me-2 my-2" type="submit" id="add-to-cart" class="main-button">Thêm vào giỏ</button>
+                      <input class="btn btn-primary btn-radius me-2 my-2" type="submit" name="addtocart" value="Thêm vào giỏ"></input>
                     </fieldset>
                   </div>
                 </div>
+                <input type="hidden" name="id" value="<?= $kq[0]['id'] ?>">
+                <input type="hidden" name="tensp" value="<?= $kq[0]['tensp'] ?>">
+                <input type="hidden" name="img" value="<?= $kq[0]['img'] ?>">
+                <input type="hidden" name="gia" value="<?= $kq[0]['gia'] ?>">
+                <input type="hidden" name="soluong" value="<?= $kq[0]['soluong'] ?>">
               </form>
             </div>
           </div>
@@ -64,7 +68,6 @@ include "view/header.php";
       </div>
     </div>
   </div>
-</div>
 </div>
 <?php
 include "view/footer.php";

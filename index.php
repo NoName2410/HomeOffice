@@ -1,8 +1,10 @@
 <?php
 session_start();
 ob_start();
+if(!isset($_SESSION['giohang'])) $_SESSION['giohang']=[];
 include "model/connectdb.php";
 include "model/user.php";
+include "donhang.php";
 include "model/validation.php";
 include "model/sanpham.php";
 include "model/danhmuc.php";
