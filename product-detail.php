@@ -40,7 +40,6 @@ include "view/header.php";
                   <div class="col-lg-12">
                     <fieldset>
                       <button class="btn btn-primary btn-radius me-2 my-2" type="submit" id="add-to-cart" class="main-button">Thêm vào giỏ</button>
-                      <button class="btn btn-primary btn-radius me-2 my-2" type="submit" id="buy-nơ" class="main-button">Mua ngay</button>
                     </fieldset>
                   </div>
                 </div>
