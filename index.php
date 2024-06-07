@@ -5,12 +5,13 @@ include "model/connectdb.php";
 include "model/user.php";
 include "model/validation.php";
 include "model/sanpham.php";
+include "model/danhmuc.php";
 switch ($_GET['act']) {
 	case 'login':
 		if ((isset($_POST['login'])) && ($_POST['login'])) {
 			$user = $_POST['user'];
 			$pass = $_POST['pass'];
-			if (checkuser($user, $pass)) {
+			if (checkuser($user, $pass) == 1 || checkuser($user, $pass) == 0) {
 				$kq = getuserinfo($user, $pass);
 				$role = $kq[0]['role'];
 				if ($role == 1) {
@@ -80,6 +81,20 @@ switch ($_GET['act']) {
 		$spshop = getall_sp();
 		include "shop.php";
 		break;
+	case 'product-detail':
+		if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+			$kq = getonesp($_GET['id']);
+			$dsdm = getall_dm();
+			$iddmcur = $kq[0]['iddm'];
+			if (isset($dsdm)) {
+				foreach ($dsdm as $dm) {
+					if ($dm['id'] == $iddmcur)
+						$tendm = $dm['tendm'];
+				}
+			}
+		}
+		include "product-detail.php";
+		break;
 	case 'about':
 		include "about.php";
 		break;
@@ -94,6 +109,9 @@ switch ($_GET['act']) {
 		break;
 	case 'cart':
 		include "cart.php";
+		break;
+	case 'checkout':
+		include "checkout.php";
 		break;
 	case 'thoat':
 		if (isset($_SESSION['role'])) {
