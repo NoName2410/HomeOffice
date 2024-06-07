@@ -69,7 +69,8 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                     $iddm=$_POST['iddm'];
                     $tensp=$_POST['tensp'];
                     $gia=$_POST['gia'];
-
+                    $soluong = $_POST['soluong'];
+                    $mota = $_POST['mota'];
                     $target_dir = "../uploaded/";
                     $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                     $img = $target_file;
@@ -84,7 +85,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                     if($uploadOk==1){
                         move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
                         //if($_FILES['hinh']['name']!="") $img=$_FILES['hinh']['name']; else $img="";
-                        insert_sp($iddm,$tensp,$gia,$img);
+                        insert_sp($iddm,$tensp,$gia,$img,$soluong,$mota);
                     }
                     
                 }
@@ -103,6 +104,8 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                     $iddm = $_POST['iddm'];
                     $tensp = $_POST['tensp'];
                     $gia = $_POST['gia'];
+                    $soluong = $_POST['soluong'];
+                    $mota = $_POST['mota'];
                     $id = $_POST['id'];
                     if($_FILES["hinh"]["name"]!=""){
                         $target_dir = "../uploaded/";
@@ -126,7 +129,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                         $img = "";
                     }
                     
-                    updatesp($id, $tensp, $img, $gia,$iddm);
+                    updatesp($id, $tensp, $img, $gia,$iddm,$soluong,$mota);
                     $kq = getall_sp();
                     $dsdm = getall_dm();
                     include "views/sanpham.php";
@@ -236,7 +239,6 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
     } else {
         include "views/dashboard.php";
     }
-    include "views/footer.php";
 } else {
     header('location: ../login.php');
 }

@@ -1,14 +1,14 @@
 <?php
-function updatesp($id, $tensp, $img, $gia,$iddm)
+function updatesp($id, $tensp, $img, $gia,$iddm,$soluong,$mota)
 {
     $conn = connectdb();
     if($img==""){
         $sql = "UPDATE tbl_sanpham
-        SET tensp='" . $tensp . "', gia='" . $gia . "', iddm='" . $iddm . "'
+        SET tensp='" . $tensp . "', gia='" . $gia . "', iddm='" . $iddm . "', soluong='" . $soluong . "', mota='" . $mota . "'
         WHERE id=" . $id . ";";
     }else{
         $sql = "UPDATE tbl_sanpham
-        SET tensp='" . $tensp . "', gia='" . $gia . "', iddm='" . $iddm . "', img='" . $img . "'
+        SET tensp='" . $tensp . "', gia='" . $gia . "', iddm='" . $iddm . "', img='" . $img . "', soluong='" . $soluong . "', mota='" . $mota . "'
         WHERE id=" . $id . ";";
     }
     
@@ -34,9 +34,9 @@ function delsp($id){
     $sql = "DELETE FROM tbl_sanpham WHERE id=".$id;
     $conn->exec($sql);
 }
-function insert_sp($iddm,$tensp,$gia,$img){
+function insert_sp($iddm,$tensp,$gia,$img,$soluong,$mota){
     $conn = connectdb();
-    $sql = "INSERT INTO tbl_sanpham (iddm, tensp, gia, img) VALUES ('$iddm','$tensp','$gia','$img')";
+    $sql = "INSERT INTO tbl_sanpham (iddm, tensp, gia, img,soluong,mota) VALUES ('$iddm','$tensp','$gia','$img','$soluong','$mota')";
     $conn->exec($sql);
 }
 function getall_sp()

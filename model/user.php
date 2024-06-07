@@ -7,7 +7,7 @@ function checkuser($user, $pass)
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $kq = $stmt->fetchAll();
     if (count($kq) > 0) return $kq[0]['role'];
-    else return 0;
+    else return -1;
 }
 function getuserinfo($user, $pass)
 {

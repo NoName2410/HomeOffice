@@ -9,14 +9,14 @@
 				<!--<div class="row">
 					<div class="col-lg-8">
 						<div class="subscription-form">
-							<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+							<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Đăng ký nhận tin tức</span></h3>
 
 							<form action="#" class="row g-3">
 								<div class="col-auto">
-									<input type="text" class="form-control" placeholder="Enter your name">
+									<input type="text" class="form-control" placeholder="Điền tên của bạn">
 								</div>
 								<div class="col-auto">
-									<input type="email" class="form-control" placeholder="Enter your email">
+									<input type="email" class="form-control" placeholder="Điền email của bạn">
 								</div>
 								<div class="col-auto">
 									<button class="btn btn-primary">
@@ -33,7 +33,6 @@
 					<div class="col-lg-4">
 						<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">HomeOffice<span>.</span></a></div>
 						<p class="mb-4">Chào mừng đến với HomeOffice, nơi chúng tôi mang đến những thiết kế nội thất sang trọng và tinh tế cho không gian văn phòng hoặc phòng làm việc tại nhà của bạn. Hãy khám phá thế giới nội thất văn phòng ấn tượng của chúng tôi và tạo nên một môi trường làm việc lý tưởng.</p>
-
 						<ul class="list-unstyled custom-social">
 							<li><a href="https://web.facebook.com/huynee14.07/" target="_blank"><span class="fa fa-brands fa-facebook-f"></span></a></li>
 							<li><a href="https://www.youtube.com/@istarhaui" target="_blank"><span class="fa fa-brands fa-youtube"></span></a></li>
@@ -70,16 +69,12 @@
 				</div>
 				<div class="border-top copyright">
 					<div class="row pt-4">
-						<div class="col-lg-6">
-							<p class="mb-2 text-center text-lg-start">Bản quyển thuộc về Nhóm 4</p>
-						</div>
+					<p class="mb-2 text-center">Bản quyển thuộc về nhóm 4</p>
 					</div>
 				</div>
 			</div>
 		</footer>
 		<!-- End Footer Section -->	
-
-
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>
 		<script src="js/custom.js"></script>
