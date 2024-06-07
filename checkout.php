@@ -324,7 +324,7 @@ include "view/header.php";
 							</div>
 
 							<div class="form-group">
-								<button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='thankyou.php'">Place Order</button>
+								<button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='index.php?act=thankyou'">Đặt hàng</button>
 							</div>
 
 						</div>

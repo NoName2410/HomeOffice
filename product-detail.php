@@ -63,12 +63,19 @@ include "view/header.php";
   <div class="container">
     <div class="sidebar-item recent-posts">
       <div class="sidebar-heading">
+      <div class="sidebar-heading">
         <h2>Mô tả sản phẩm</h2>
       </div>
       <div class="content">
         <p><?php echo $kq[0]['mota'] ?></p>
       </div>
+      </div>
+      <div class="content">
+        <p><?php echo $kq[0]['mota'] ?></p>
+      </div>
     </div>
+  </div>
+</div>
   </div>
 </div>
 </div>
