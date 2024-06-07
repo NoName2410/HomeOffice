@@ -21,7 +21,7 @@
         $masp = $item['idsp'];
         $spct = getonesp($masp);
 
-        $tongtien = $item[''] * $item['slm'];
+        $tongtien = $spct[0]['gia'] * $item['slm'];
         $tongall += $tongtien;
         echo "<tr>
                 <td class='product-thumbnail'>
@@ -37,7 +37,11 @@
         $i++;
     }
     echo '
+        <h5 class="product-total" colspan="2">
+        Tổng thanh toán: '.$tongtien.' đ
+        </h5>
         </tbody>
+        
     </table>';
     ?>
     <h2>CẬP NHẬT THANH TOÁN</h2>
@@ -146,7 +150,7 @@
     .table td.product-price,
     .table td.product-quantity,
     .table td.product-total {
-        text-align: right;
+        text-align: left;
     }
 
     /* CSS for Form */
