@@ -32,8 +32,8 @@
                 <h2 class="section-title"><?php echo $kq[0]['tensp'] ?></h2>
               </div>
               <div class="content">
-                <p style="color: black; font-size: 16px;"><b>Danh Mục: </b><?php echo $tendm ?> </p>
-                <p  style="color: black; font-size: 25px; margin: 0;"><?php echo'<strong class="product-price">'.$kq[0]['gia'].'₫</strong>	';?></p>
+                <p class="category"><b>Danh Mục: </b><?php echo $tendm ?></p>
+                <div><?php echo'<strong class="product-price">'.$kq[0]['gia'].'₫</strong>';?></div>
               </div>
             </div>
             <br>
@@ -73,7 +73,7 @@
     <div class="container">
     <div class="sidebar-item recent-posts">
         <div class="sidebar-heading">
-        <h2>Description</h2>
+        <h2>Mô tả</h2>
         </div>
         <div class="content">
           <p>Sản phẩm A là một sản phẩm vô cùng phổ thông, được thiết kế và gia công bằng gỗ xoan cao cấp, có khả năng chống ẩm mốc cao</p>

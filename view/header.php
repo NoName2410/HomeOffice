@@ -36,8 +36,8 @@
                         <a class="nav-link" href="index.php">Trang chủ</a>
                     </li>
                     <li><a class="nav-link" href="index.php?act=shop">Sản phẩm</a></li>
-                    <li><a class="nav-link" href="index.php?act=about">Về chúng tôi</a></li>
-                    <li><a class="nav-link" href="index.php?act=contact">Liên hệ</a></li>
+                    <li><a class="nav-link" href="index.php?act=about">Blog</a></li>
+                    <li><a class="nav-link" href="index.php?act=contact">Về chúng tôi</a></li>
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
