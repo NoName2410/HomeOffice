@@ -1,5 +1,5 @@
 	<?php
-		include "view/header.php";
+	include "view/header.php";
 	?>
 
 	<!-- Start Hero Section -->
@@ -8,14 +8,11 @@
 			<div class="row justify-content-between">
 				<div class="col-lg-5">
 					<div class="intro-excerpt">
-						<h1>Contact</h1>
-						<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-						<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
-					</div>
-				</div>
-				<div class="col-lg-7">
-					<div class="hero-img-wrap">
-						<img src="images/couch.png" class="img-fluid">
+						<h1>Liên hệ</h1>
+						<p class="mb-4">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2923659846565!2d106.64007917540961!3d10.788905089360563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752eb25c50ad25%3A0xe2797a201014ad5!2zTuG7mWkgdGjhuqV0IEhvbWVPZmZpY2U!5e0!3m2!1sen!2s!4v1717727757942!5m2!1sen!2s" width="1300" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						</p>
+
 					</div>
 				</div>
 			</div>
@@ -30,11 +27,7 @@
 
 			<div class="block">
 				<div class="row justify-content-center">
-
-
 					<div class="col-md-8 col-lg-8 pb-4">
-
-
 						<div class="row mb-5">
 							<div class="col-lg-4">
 								<div class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
@@ -44,7 +37,7 @@
 										</svg>
 									</div> <!-- /.icon -->
 									<div class="service-contents">
-										<p>43 Raymouth Rd. Baltemoer, London 3910</p>
+										<p>206/40 Đồng Đen, Phường 14, Quận Tân Bình, Tp.Hồ Chí Minh</p>
 									</div> <!-- /.service-contents-->
 								</div> <!-- /.service -->
 							</div>
@@ -57,7 +50,7 @@
 										</svg>
 									</div> <!-- /.icon -->
 									<div class="service-contents">
-										<p>info@yourdomain.com</p>
+										<p>duyvu@homeoffice.com.vn</p>
 									</div> <!-- /.service-contents-->
 								</div> <!-- /.service -->
 							</div>
@@ -70,7 +63,7 @@
 										</svg>
 									</div> <!-- /.icon -->
 									<div class="service-contents">
-										<p>+1 294 3925 3939</p>
+										<p>0903.005.138</p>
 									</div> <!-- /.service-contents-->
 								</div> <!-- /.service -->
 							</div>
@@ -80,44 +73,38 @@
 							<div class="row">
 								<div class="col-6">
 									<div class="form-group">
-										<label class="text-black" for="fname">First name</label>
+										<label class="text-black" for="fname">Tên</label>
 										<input type="text" class="form-control" id="fname">
 									</div>
 								</div>
 								<div class="col-6">
 									<div class="form-group">
-										<label class="text-black" for="lname">Last name</label>
+										<label class="text-black" for="lname">Họ</label>
 										<input type="text" class="form-control" id="lname">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="text-black" for="email">Email address</label>
+								<label class="text-black" for="email">Địa chỉ Email</label>
 								<input type="email" class="form-control" id="email">
 							</div>
 
 							<div class="form-group mb-5">
-								<label class="text-black" for="message">Message</label>
+								<label class="text-black" for="message">Lời nhắn</label>
 								<textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
 							</div>
 
-							<button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
+							<button type="submit" class="btn btn-primary-hover-outline">Gửi tin nhắn</button>
 						</form>
 
 					</div>
 
 				</div>
-
 			</div>
-
 		</div>
-
-
 	</div>
-	</div>
-
 	<!-- End Contact Form -->
-	
+
 	<?php
-		include "view/footer.php";
+	include "view/footer.php";
 	?>

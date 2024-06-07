@@ -8,7 +8,7 @@ include "view/header.php";
 		<div class="row justify-content-between">
 			<div class="col-lg-5">
 				<div class="intro-excerpt">
-					<h1>GIỎ HÀNG CỦA BẠN</h1>
+					<h1>GIỎ HÀNG</h1>
 				</div>
 			</div>
 			<div class="col-lg-7">
@@ -24,9 +24,9 @@ include "view/header.php";
 		<div class="row mb-5">
 			<form class="col-md-12" method="post">
 				<div class="site-blocks-table">
-				            <tr>
-							    <th>Sản phẩm đã thêm</th>
-							</tr>
+					<tr>
+						<th>Sản phẩm đã thêm</th>
+					</tr>
 					<table class="table">
 						<thead>
 							<tr>
@@ -39,7 +39,7 @@ include "view/header.php";
 							</tr>
 						</thead>
 						<tbody>
-							 <tr>
+							<tr>
 								<td class="product-thumbnail">
 									<img src="images/product-1.png" alt="Image" class="img-fluid">
 								</td>
@@ -85,7 +85,7 @@ include "view/header.php";
 								</td>
 								<td>$49.00</td>
 								<td><a href="#" class="btn btn-black btn-sm">X</a></td>
-							</tr> 
+							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -96,22 +96,22 @@ include "view/header.php";
 			<div class="col-md-6">
 				<div class="row mb-5">
 					<div class="col-md-6 mb-3 mb-md-0">
-						<button class="btn btn-black btn-sm btn-block">Update Cart</button>
+						<button class="btn btn-black btn-sm btn-block">Cập nhật giỏ hàng</button>
 					</div>
 					<div class="col-md-6">
-						<button class="btn btn-outline-black btn-sm btn-block">Continue Shopping</button>
+						<button class="btn btn-outline-black btn-sm btn-block">Tiếp tục mua sắm</button>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<label class="text-black h4" for="coupon">Coupon</label>
-						<p>Enter your coupon code if you have one.</p>
+						<label class="text-black h4" for="coupon">Mã giảm giá</label>
+						<p>Nhập mã giảm giá, nếu bạn có.</p>
 					</div>
 					<div class="col-md-8 mb-3 mb-md-0">
-						<input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
+						<input type="text" class="form-control py-3" id="coupon" placeholder="Mã giảm giá">
 					</div>
 					<div class="col-md-4">
-						<button class="btn btn-black">Apply Coupon</button>
+						<button class="btn btn-black">Áp dụng</button>
 					</div>
 				</div>
 			</div>
@@ -120,12 +120,12 @@ include "view/header.php";
 					<div class="col-md-7">
 						<div class="row">
 							<div class="col-md-12 text-right border-bottom mb-5">
-								<h3 class="text-black h4 text-uppercase">Tổng giỏ hàng</h3>
+								<h3 class="text-black h4 text-uppercase">Tổng tiền</h3>
 							</div>
 						</div>
 						<div class="row mb-3">
 							<div class="col-md-6">
-								<span class="text-black">Subtotal</span>
+								<span class="text-black">Tổng phụ</span>
 							</div>
 							<div class="col-md-6 text-right">
 								<strong class="text-black"></strong>
@@ -133,7 +133,7 @@ include "view/header.php";
 						</div>
 						<div class="row mb-5">
 							<div class="col-md-6">
-								<span class="text-black">Total</span>
+								<span class="text-black">Tổng cộng</span>
 							</div>
 							<div class="col-md-6 text-right">
 								<strong class="text-black"></strong>
@@ -142,7 +142,7 @@ include "view/header.php";
 
 						<div class="row">
 							<div class="col-md-12">
-								<button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='checkout.php'">Proceed To Checkout</button>
+								<a href="index.php?act=checkout" class="btn btn-black btn-lg py-3 btn-block">Tiến hành thanh toán</a>
 							</div>
 						</div>
 					</div>

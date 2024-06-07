@@ -1,23 +1,8 @@
 <?php
-  include "model/sanpham.php";
-  include "model/danhmuc.php";
-  include "model/connectdb.php";
-	include "view/header.php";
-  if(isset($_GET['id'])&&($_GET['id']>0)){
-    $kq=getonesp($_GET['id']);
-    $dsdm = getall_dm();
-    $iddmcur = $kq[0]['iddm'];
-      if(isset($dsdm)){
-        foreach($dsdm as $dm){
-          if($dm['id'] == $iddmcur)
-            $tendm = $dm['tendm'];
-        } 
-     }
-  }
+include "view/header.php";
 ?>
 
 <!-- Start Product Section -->
-
 <section class="blog-posts">
       <div class="container">
         <div class="row">
@@ -44,7 +29,7 @@
                   <h2 class="section-title">Thêm vào giỏ</h2>
                 </div>
                 <div class="content">
-                  <form id="contact" action="" method="post">
+                  <form id="contact" action="index.php?act=cart" method="post">
                     <div class="row">
                       <div class="col-md-6 col-sm-12 quantity">
                         <fieldset>
@@ -55,7 +40,6 @@
                       <div class="col-lg-12">
                         <fieldset>
                           <button class="btn btn-primary btn-radius me-2 my-2" type="submit" id="add-to-cart" class="main-button">Thêm vào giỏ</button>
-                          <button class="btn btn-primary btn-radius me-2 my-2" type="submit" id="buy-nơ" class="main-button">Mua ngay</button>
                         </fieldset>
                       </div>
                     </div>
@@ -67,10 +51,13 @@
           </div>
         </div>
       </div>
-    </section>
+   </div>
+    </div>
+  </div>
+</section>
 
 <div class="section contact-us description">
-    <div class="container">
+  <div class="container">
     <div class="sidebar-item recent-posts">
         <div class="sidebar-heading">
         <h2>Mô tả sản phẩm</h2>
@@ -80,7 +67,8 @@
         </div>
     </div>
     </div>
+  </div>
 </div>
 <?php
-  include "view/footer.php";
-?>    
+include "view/footer.php";
+?>
