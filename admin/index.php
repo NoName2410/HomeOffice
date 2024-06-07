@@ -236,7 +236,6 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
     } else {
         include "views/dashboard.php";
     }
-    include "views/footer.php";
 } else {
     header('location: ../login.php');
 }
