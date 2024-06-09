@@ -1,28 +1,5 @@
 <?php
 include "view/header.php";
-if ((isset($_POST['add_to_cart'])) && ($_POST['add_to_cart'])) {
-	$tensp = $_POST['tensp'];
-	$img = $_POST['img'];
-	$gia = $_POST['gia'];
-	$id = $_POST['id'];
-	$soluong = $_POST['soluong'];
-	$fg = 0;
-	$i=0;
-	foreach($_SESSION['cart'] as $item){
-		if($item[1]===$tensp){
-			$slnew = $item[4] + $soluong;
-			$_SESSION['cart'][$i][4]=$slnew;
-			$fg =1;
-			break;
-		}
-		$i++;
-	}
-	if($fg ==0 ){
-		$item = array($id, $tensp, $img, $gia,$soluong);
-		$_SESSION['cart'][] = $item;
-	}
-	
-}
 ?>
 
 <!-- Start Hero Section -->
@@ -41,15 +18,12 @@ if ((isset($_POST['add_to_cart'])) && ($_POST['add_to_cart'])) {
 	</div>
 </div>
 <!-- End Hero Section -->
-
 <div class="untree_co-section before-footer-section">
 	<div class="container">
 		<div class="row mb-5">
 			<form class="col-md-12" method="post">
 				<div class="site-blocks-table">
-	
-						<h3 align="center">Sản phẩm đã thêm</h3>
-					
+					<h3 align="center">Sản phẩm đã thêm</h3>
 					<table class="table">
 						<thead>
 							<tr>
@@ -58,40 +32,31 @@ if ((isset($_POST['add_to_cart'])) && ($_POST['add_to_cart'])) {
 								<th class="product-price">Giá tiền</th>
 								<th class="product-quantity">Số lượng</th>
 								<th class="product-total">Tổng tiền</th>
-								<th class="product-remove">Xóa </th>
+								<th class="product-remove">Xóa</th>
 							</tr>
 						</thead>
 						<tbody>
 							<?php
-							
-							if ((isset($_SESSION['cart'])) && (count($_SESSION['cart']) > 0)) {
-								$i=0;
-								$tongall =0;
+							if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+								$i = 0;
+								$tongall = 0;
 								foreach ($_SESSION['cart'] as $item) {
-									$tongtien = $item[3]*$item[4];
-									$tongall +=$tongtien;
+									$tongtien = $item[3] * $item[4];
+									$tongall += $tongtien;
 									echo "<tr>
-										<td class='product-thumbnail'>
-											<img src=";
-										echo './'.ltrim($item[2], '.');
-										echo " alt='Image' class='img-fluid' width='100px'>
-										</td>
-										<td class='product-name'>
-											".$item[1]."
-										</td>
-										<td>".$item[3]."</td>
-										<td>$item[4]</td>
-								<td>$tongtien</td>";
-								echo'
-								<td><a href="index.php?act=delcart&i='.$i.'" class="btn btn-black btn-sm">X</a></td>
-							</tr>';
+                                            <td class='product-thumbnail'>
+                                                <img src='./" . ltrim($item[2], '.') . "' alt='Image' class='img-fluid' width='100px'>
+                                            </td>
+                                            <td class='product-name'>" . $item[1] . "</td>
+                                            <td>" . $item[3] . "</td>
+                                            <td>" . $item[4] . "</td>
+                                            <td>$tongtien</td>
+                                            <td><a href='index.php?act=delcart&i=$i' class='btn btn-black btn-sm'>X</a></td>
+                                          </tr>";
 									$i++;
 								}
-							
 							}
-							
 							?>
-
 						</tbody>
 					</table>
 				</div>
@@ -101,47 +66,34 @@ if ((isset($_POST['add_to_cart'])) && ($_POST['add_to_cart'])) {
 		<div class="row">
 			<div class="col-md-6">
 				<div class="row mb-5">
-					<!-- <div class="col-md-6 mb-3 mb-md-0">
-						<div class='input-group mb-3 d-flex align-items-center quantity-container' style='max-width: 120px;'>
-										<div class='input-group-prepend'>
-											<button class='btn btn-outline-black decrease' type='button'>&minus;</button>
-										</div>
-										<input type='text' class='form-control text-center quantity-amount' value='$item[4]' placeholder='' aria-label='Example text with button addon' aria-describedby='button-addon1'>
-										<div class='input-group-append'>
-											<button class='btn btn-outline-black increase' type='button'>&plus;</button>
-										</div>
-									</div>
-						<button class="btn btn-black btn-sm btn-block" >Cập nhật giỏ hàng</button>
-					</div> -->
 					<div class="col-md-6">
 						<a class="btn btn-outline-black btn-sm btn-block" href="index.php?act=shop">Tiếp tục mua sắm</a>
 					</div>
 				</div>
 				<form action="index.php?act=thanhtoan" method="post">
-					<input type="hidden" name="id" id="" value=<?php echo $_SESSION['id']; ?>>
-				<div class="row">
-					<div class="col-md-12">
-						<label class="text-black h4" for="coupon">Địa chỉ nhận hàng</label>
-						<p>Vui lòng nhập địa chỉ nhận hàng.</p>
+					<input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
+					<div class="row">
+						<div class="col-md-12">
+							<label class="text-black h4" for="coupon">Địa chỉ nhận hàng</label>
+							<p>Vui lòng nhập địa chỉ nhận hàng.</p>
+						</div>
+						<div class="col-md-8 mb-3 mb-md-0">
+							<input type="text" class="form-control py-3" name="address" placeholder="Địa chỉ">
+						</div>
 					</div>
-					<div class="col-md-8 mb-3 mb-md-0">
-						<input type="text" class="form-control py-3" name="address" placeholder="Địa chỉ" >
+					<div class="row">
+						<div class="col-md-12">
+							<label class="text-black h4" for="coupon">Phương thức thanh toán</label>
+							<p>Vui lòng chọn phương thức thanh toán.</p>
+						</div>
+						<div class="col-md-8 mb-3 mb-md-0">
+							<select name="payment" class="form-control">
+								<option value="1">Thanh toán khi nhận hàng</option>
+								<option value="2">Chuyển khoản ngân hàng</option>
+								<option value="3">Thanh toán bằng VN-pay</option>
+							</select>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<label class="text-black h4" for="coupon">Phương thức thanh toán</label>
-						<p>Vui lòng chọn phương thức thanh toán.</p>
-					</div>
-					<div class="col-md-8 mb-3 mb-md-0">
-					<select name="payment" class="form-control">
-							<option value="1">Thanh toán khi nhận hàng</option>
-							<option value="2">Chuyển khoản</option>
-							<option value="3">Đến mua tại quầy</option>
-						</select>
-					</div>
-				</div>
-				
 			</div>
 			<div class="col-md-6 pl-5">
 				<div class="row justify-content-end">
@@ -167,10 +119,13 @@ if ((isset($_POST['add_to_cart'])) && ($_POST['add_to_cart'])) {
 								<strong class="text-black"></strong>
 							</div>
 						</div>
-
 						<div class="row">
 							<div class="col-md-12">
-								<input type="submit" name="thanhtoan" class="btn btn-black btn-lg py-3 btn-block" value="Tiến hành thanh toán">
+								<?php
+									if (!$_SESSION['id']) {
+										echo '<input type="submit" name="thanhtoan" class="btn btn-black btn-lg py-3 btn-block" value="Đăng nhập để thanh toán">';
+									}else echo '<input type="submit" name="thanhtoan" class="btn btn-black btn-lg py-3 btn-block" value="Tiến hành thanh toán">';
+								?>
 							</div>
 						</div>
 					</div>
@@ -180,7 +135,6 @@ if ((isset($_POST['add_to_cart'])) && ($_POST['add_to_cart'])) {
 		</div>
 	</div>
 </div>
-
 <?php
 include "view/footer.php";
 ?>
