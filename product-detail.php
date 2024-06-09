@@ -18,7 +18,9 @@ include "view/header.php";
           </div>
           <div class="content">
             <p style="color: black; font-size: 16px;"><b>Danh Mục: </b><?php echo $tendm ?> </p>
-            <p style="color: black; font-size: 25px; margin: 0;"><?php echo '<strong class="product-price">' . $kq[0]['gia'] . '₫</strong>	'; ?></p>
+            <p style="color: black; font-size: 25px; margin: 0;">
+              <?php echo '<strong class="product-price">' . number_format($kq[0]['gia'], 0, ',', '.') . ' VNĐ</strong>'; ?>
+            </p>
           </div>
         </div>
 
@@ -33,17 +35,18 @@ include "view/header.php";
                   <div class="col-md-6 col-sm-12 quantity">
                     <fieldset>
                       <label for="">Số lượng</label>
-                      <input type="number" value="1" required="" min=1 max="50" name="soluong">Số lượng còn: <?php echo $kq[0]['soluong'] ?>
+                      <input type="number" value="1" required="" min=1 name="soluong">
+                      <input type="text" value="Số lượng còn: <?= $kq[0]['soluong'] ?>" disabled>
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <input type="hidden" name="id" value="<?php echo $kq[0]['id'] ?>">
-                      <input type="hidden" name="tensp" value="<?php echo $kq[0]['tensp'] ?>">
-                      <input type="hidden" name="img" value="<?php echo $kq[0]['img'] ?>">
-                      <input type="hidden" name="gia" value="<?php echo $kq[0]['gia'] ?>">
+                      <input type="hidden" name="id" value="<?= $kq[0]['id'] ?>">
+                      <input type="hidden" name="tensp" value="<?= $kq[0]['tensp'] ?>">
+                      <input type="hidden" name="img" value="<?= $kq[0]['img'] ?>">
+                      <input type="hidden" name="gia" value="<?= $kq[0]['gia'] ?>">
+                      <input type="hidden" name="sluong" value="<?= $kq[0]['soluong'] ?>">
                       <input type="submit" name="add_to_cart" value="Thêm vào giỏ" class="btn btn-primary btn-radius me-2 my-2 main-button" style="color:white;">
-                      <!-- <button class="btn btn-primary btn-radius me-2 my-2" type="submit" name="addtocart" class="main-button">Thêm vào giỏ</button> -->
                     </fieldset>
                   </div>
                 </div>

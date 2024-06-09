@@ -10,16 +10,8 @@
                 </div>
             </div>
             <div class="col-lg-5 ps-lg-5">
-                <h2 class="section-title mb-4">We Help You Make Modern Interior Design</h2>
+                <h2 class="section-title mb-4">Chúng tôi giúp bạn thiết kế nội thât sang trọng</h2>
                 <p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-
-                <ul class="list-unstyled custom-list my-4">
-                    <li>Donec vitae odio quis nisl dapibus malesuada</li>
-                    <li>Donec vitae odio quis nisl dapibus malesuada</li>
-                    <li>Donec vitae odio quis nisl dapibus malesuada</li>
-                    <li>Donec vitae odio quis nisl dapibus malesuada</li>
-                </ul>
-                <p><a herf="#" class="btn">Explore</a></p>
             </div>
         </div>
     </div>

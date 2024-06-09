@@ -36,14 +36,13 @@
                         <a class="nav-link" href="index.php">Trang chủ</a>
                     </li>
                     <li><a class="nav-link" href="index.php?act=shop">Sản phẩm</a></li>
-                    <li><a class="nav-link" href="index.php?act=about">Blog</a></li>
-                    <li><a class="nav-link" href="index.php?act=contact">Về chúng tôi</a></li>
+                    <li><a class="nav-link" href="index.php?act=contact">Liên hệ</a></li>
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
                     <?php
                     if (isset($_SESSION['id']) && ($_SESSION['id'] != "")) {
-                        echo '<li><a class="nav-link" href="index.php?act=account">'.$_SESSION['name'].'</a></li>
+                        echo '<li><a class="nav-link" href="index.php?act=account">' . $_SESSION['name'] . '</a></li>
                         <li style="margin-right: 20px;"><a class="nav-link" href="index.php?act=cart"><img src="images/cart.svg"></a></li>
                         <li style="margin-right: 20px;"><a class="nav-link" href="index.php?act=thoat" name="exit">Logout</a></li>';
                     } else {

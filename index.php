@@ -117,30 +117,71 @@ switch ($_GET['act']) {
 			$img = $_POST['img'];
 			$gia = $_POST['gia'];
 			$id = $_POST['id'];
-			$soluong = $_POST['soluong'];
 			$fg = 0;
-			$i = 0;
+
+			// Cập nhật biến $soluong để lấy giá trị số lượng từ form trước đó
+			$soluong = $_POST['soluong'];
+
 			if (!isset($_SESSION['cart'])) {
 				$_SESSION['cart'] = array();
 			}
-			foreach ($_SESSION['cart'] as $item) {
-				if ($item[1] === $tensp) {
-					$slnew = $item[4] + $soluong;
-					$_SESSION['cart'][$i][4] = $slnew;
-					$fg = 1;
-					break;
+
+			// Cập nhật biến $checkStock để lấy giá trị số lượng còn trong kho từ form trước đó
+			$checkStock = intval($_POST['sluong']);
+
+			if ($checkStock >= $soluong) {
+
+				foreach ($_SESSION['cart'] as $key => $item) {
+					if ($item[1] === $tensp) {
+						$slnew = $item[4] + $soluong;
+						$_SESSION['cart'][$key][4] = $slnew;
+						$fg = 1;
+						break;
+					}
 				}
-				$i++;
+
+				if ($fg == 0) {
+					$item = array($id, $tensp, $img, $gia, $soluong);
+					$_SESSION['cart'][] = $item;
+				}
+				header("Location:index.php?act=cart");
+				exit();
+			} else {
+				echo '<script>
+							alert("Hàng trong kho không còn đủ (Out of stock)");
+							history.go(-1); // Go back to the previous page
+						</script>';
 			}
-			if ($fg == 0) {
-				$item = array($id, $tensp, $img, $gia, $soluong);
-				$_SESSION['cart'][] = $item;
+		}
+		include "cart.php";
+		break;
+	case 'updateCart':
+		if (isset($_POST['modifyQua']) && isset($_POST['quantity'])) {
+			foreach ($_POST['quantity'] as $key => $value) {
+				// Lấy số lượng còn trong kho
+				$checkStock = intval($_POST['sluong'][$key]);
+				if ($value > $checkStock) {
+					echo '<script>
+							alert("Hàng trong kho không còn đủ (Out of stock)");
+							history.go(-1); // Go back to the previous page
+						</script>';
+					exit();
+				}
+				if ($value > 0) {
+					$_SESSION['cart'][$key][4] = $value;
+				}
+				if ($value <= 0) {
+					// Nếu người dùng nhập số lượng <= 0, ta sẽ loại bỏ sản phẩm khỏi giỏ hàng
+					unset($_SESSION['cart'][$key]);
+				}
 			}
-			header("Location:index.php?act=cart");
+			header("Location: index.php?act=cart");
 			exit();
 		}
 		include "cart.php";
 		break;
+
+
 	case 'delcart':
 		echo $_GET['i'];
 		if (isset($_GET['i'])) {
@@ -173,9 +214,6 @@ switch ($_GET['act']) {
 		}
 		include "thankyou.php";
 		break;
-	case 'checkout':
-		include "checkout.php";
-		break;
 	case 'thankyou':
 		include "thankyou.php";
 		break;
@@ -194,11 +232,8 @@ switch ($_GET['act']) {
 	default:
 		include "view/header.php";
 		include "view/hero.php";
-		include "view/product.php";
 		include "view/whychooseus.php";
 		include "view/wehelp.php";
-		include "view/popularproduct.php";
-		include "view/testimonialslider.php";
 		include "view/blogsection.php";
 		include "view/footer.php";
 		break;
