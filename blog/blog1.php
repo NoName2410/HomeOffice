@@ -128,8 +128,8 @@
 
 			<div class="row g-5 mb-5">
 				<div class="col-lg-4">
-					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Furni<span>.</span></a></div>
-					<p class="mb-4">Chúng tôi luôn muốn đem đến cho bạn một trải nghiệm tốt nhất.Cảm ơn vì đã luôn tin tưởng và ủng hộ Furni !!!</p>
+					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">HomeOffice<span>.</span></a></div>
+					<p class="mb-4">Chúng tôi luôn muốn đem đến cho bạn một trải nghiệm tốt nhất.Cảm ơn vì đã luôn tin tưởng và ủng hộ HomeOffice !!!</p>
 
 					<ul class="list-unstyled custom-social">
 						<li><a href="https://www.facebook.com/giantbox.vn"><span class="fa fa-brands fa-facebook-f"></span></a></li>
