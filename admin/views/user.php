@@ -6,7 +6,7 @@
             <th>Name</th>
             <th>Address</th>
             <th>Email</th>
-            <th>user</th>
+            <th>User</th>
             <th>Password</th>
             <th>Role</th>
             <th>Action</th>
