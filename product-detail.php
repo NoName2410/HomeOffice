@@ -68,9 +68,6 @@ include "view/header.php";
           <p><?php echo $kq[0]['mota'] ?></p>
         </div>
       </div>
-      <div class="content">
-        <p><?php echo $kq[0]['mota'] ?></p>
-      </div>
     </div>
   </div>
 </div>

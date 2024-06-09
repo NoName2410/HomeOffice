@@ -22,7 +22,7 @@
     <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
         <div class="container">
-            <a class="navbar-brand" href="index.php">Furni<span>.</span></a>
+            <a class="navbar-brand" href="index.php">HomeOffice<span>.</span></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,8 +33,8 @@
                     <li class="nav-item ">
                         <a class="nav-link" href="index.php">Dashboard</a>
                     </li>
-                    <li><a class="nav-link" href="index.php?act=danhmuc">Bảo trì danh mục</a></li>
-                    <li><a class="nav-link" href="index.php?act=sanpham">Bảo trì sản phẩm</a></li>
+                    <li><a class="nav-link" href="index.php?act=danhmuc">Quản lý danh mục</a></li>
+                    <li><a class="nav-link" href="index.php?act=sanpham">Quản lý sản phẩm</a></li>
                     <li><a class="nav-link" href="index.php?act=taikhoan">Quản lý tài khoản</a></li>
                     <li><a class="nav-link" href="index.php?act=donhang">Quản lý đơn hàng</a></li>
                 </ul>

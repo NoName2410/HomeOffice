@@ -114,7 +114,7 @@ if ((isset($_POST['add_to_cart'])) && ($_POST['add_to_cart'])) {
 						<button class="btn btn-black btn-sm btn-block" >Cập nhật giỏ hàng</button>
 					</div> -->
 					<div class="col-md-6">
-						<a class="btn btn-outline-black btn-sm btn-block" href="index.php">Tiếp tục mua sắm</a>
+						<a class="btn btn-outline-black btn-sm btn-block" href="index.php?act=shop">Tiếp tục mua sắm</a>
 					</div>
 				</div>
 				<form action="index.php?act=thanhtoan" method="post">
@@ -138,7 +138,6 @@ if ((isset($_POST['add_to_cart'])) && ($_POST['add_to_cart'])) {
 							<option value="1">Thanh toán khi nhận hàng</option>
 							<option value="2">Chuyển khoản</option>
 							<option value="3">Đến mua tại quầy</option>
-							
 						</select>
 					</div>
 				</div>
@@ -172,7 +171,6 @@ if ((isset($_POST['add_to_cart'])) && ($_POST['add_to_cart'])) {
 						<div class="row">
 							<div class="col-md-12">
 								<input type="submit" name="thanhtoan" class="btn btn-black btn-lg py-3 btn-block" value="Tiến hành thanh toán">
-								
 							</div>
 						</div>
 					</div>
