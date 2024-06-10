@@ -1,4 +1,20 @@
 <?php
+function showsp($idcat=0,$keyword=""){
+    $conn = connectdb();
+    $sql = "SELECT * FROM tbl_sanpham WHERE 1";
+    if($keyword != ""){
+        $sql.= " AND tensp LIKE '%".$keyword."%'";
+    }
+    if($idcat > 0){
+        $sql.= " AND iddm=".$idcat;
+    }
+    $sql.= " order by id desc";
+    $conn = connectdb();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll();
+}
 function updatesp($id, $tensp, $img, $gia,$iddm,$soluong,$mota)
 {
     $conn = connectdb();

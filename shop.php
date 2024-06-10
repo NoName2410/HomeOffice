@@ -28,8 +28,18 @@ include "view/header.php";
 <!-- Start Product -->
 <div class="untree_co-section product-section before-footer-section">
 	<div class="container">
-		<div class="row">
+	<div class="row mb-5">
+		<div class="col-md-12">
+				<form class="search-form d-flex" action="index.php?act=shop" method="post">
+					<input type="text" class="form-control me-2" name="keyword" placeholder="Tìm kiếm sản phẩm..." style="width: 300px;">
+					<input type="submit" class="btn btn-primary" name="search" value="Tìm kiếm">
+				</form>
+			</div>
+	</div>
+		
+		<div class="row mb-5">
 			<?php
+			
 			foreach ($spshop as $sp) {
 				echo '
 						<div class="col-12 col-md-4 col-lg-3 mb-5">
@@ -43,6 +53,9 @@ include "view/header.php";
 							</a>
 						</div>
 					';
+			}
+			if(empty($spshop)){
+				echo "<h3>Rất tiếc hiện tại chưa có sản phẩm bạn tìm kiếm</h3>";
 			}
 			?>
 		</div>

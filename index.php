@@ -82,7 +82,18 @@ switch ($_GET['act']) {
 		break;
 
 	case 'shop':
-		$spshop = getall_sp();
+		// $spshop = getall_sp();
+		if(isset($_GET['idcat']) && ($_GET['idcat']>0)){
+			$iddm = $_GET['idcat'];
+		}else{
+			$iddm = 0;
+		}
+		if(isset($_POST['keyword']) && ($_POST['keyword']!="")){
+			$keyword = $_POST['keyword'];
+		}else{
+			$keyword = "";
+		}
+		$spshop = showsp($iddm,$keyword);
 		include "shop.php";
 		break;
 	case 'product-detail':
