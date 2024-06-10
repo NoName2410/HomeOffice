@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
 }
 
 // Tạo đối tượng TFPDF
-$pdf = new tFPDF();
+$pdf = new tFPDF('L'); // Chế độ nằm ngang
 $pdf->AddPage();
 
 // Thêm font DejaVu
@@ -51,30 +51,26 @@ $pdf->AddFont('DejaVu', 'B', 'DejaVuSans-Bold.ttf', true);
 $pdf->SetFont('DejaVu', 'B', 16); // Sử dụng font DejaVu
 
 // Tiêu đề hóa đơn
-$pdf->Cell(40, 10, 'Hóa đơn');
-$pdf->Ln(20);
+$pdf->Cell(0, 10, 'Hóa đơn', 0, 1, 'C'); // Căn giữa tiêu đề
+$pdf->Ln(10);
 
 // Thông tin khách hàng
 $pdf->SetFont('DejaVu', '', 12);
-$pdf->Cell(100, 10, 'Khách hàng: ' . ($invoice['name'] ?? ''));
+$pdf->MultiCell(0, 10, 'Khách hàng: ' . ($invoice['name'] ?? ''));
+$pdf->MultiCell(0, 10, 'Địa chỉ: ' . ($invoice['address'] ?? ''));
+$pdf->MultiCell(0, 10, 'Email: ' . ($invoice['email'] ?? ''));
 $pdf->Ln(10);
-$pdf->Cell(100, 10, 'Địa chỉ: ' . ($invoice['address'] ?? ''));
-$pdf->Ln(10);
-$pdf->Cell(100, 10, 'Email: ' . ($invoice['email'] ?? ''));
-$pdf->Ln(20);
 
 // Tiêu đề bảng sản phẩm
 $pdf->SetFont('DejaVu', 'B', 12);
-$pdf->Cell(100, 10, 'Sản phẩm');
-$pdf->Cell(40, 10, 'Giá');
-$pdf->Ln(10);
+$pdf->Cell(160, 10, 'Sản phẩm', 1);
+$pdf->Cell(60, 10, 'Giá', 1, 1);
 
 // Sản phẩm
 $pdf->SetFont('DejaVu', '', 12);
 while ($item = $items->fetch_assoc()) {
-    $pdf->Cell(100, 10, $item['tensp'] . ' x ' . $item['slm']);
-    $pdf->Cell(40, 10, number_format($item['gia'] * $item['slm'], 2) . ' VND');
-    $pdf->Ln(10);
+    $pdf->Cell(160, 10, $item['tensp'] . ' x ' . $item['slm'], 1);
+    $pdf->Cell(60, 10, number_format($item['gia'] * $item['slm'], 2) . ' VND', 1, 1);
 }
 
 // Tổng cộng
@@ -86,8 +82,8 @@ $sql = "SELECT SUM(tbl_sanpham.gia * tbl_chitietdonhang.slm) as total
         WHERE tbl_donhang.id = $invoice_id";
 $result = $conn->query($sql);
 $total = $result->fetch_assoc();
-$pdf->Cell(100, 10, '');
-$pdf->Cell(40, 10, 'Tổng: ' . number_format($total['total'], 2) . ' VND');
+$pdf->Cell(160, 10, '', 0);
+$pdf->Cell(60, 10, 'Tổng: ' . number_format($total['total'], 2) . ' VND', 1, 1);
 
 // Xuất PDF
 ob_clean(); // Xóa bỏ bất kỳ dữ liệu đã được gửi
@@ -95,4 +91,6 @@ $pdf->Output('D', 'hoa_don.pdf'); // Xuất PDF
 
 // exit;
 ?>
+
+
 

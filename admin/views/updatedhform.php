@@ -30,15 +30,15 @@
                 <td class='product-name'>
                     " . $spct[0]['tensp'] . "
                 </td>
-                <td class='product-quantity'>" . $spct[0]['gia'] . "</td>
+                <td class='product-quantity'>" . number_format($spct[0]['gia'], 0, ',', '.') . " VNĐ</td>
                 <td class='product-quantity'>" . $item['slm'] . "</td>
-                <td class='product-total'>$tongtien</td>
+                <td class='product-total'>number_format($tongtien, 0, ',', '.'). VNĐ</td>
             </tr>";
         $i++;
     }
     echo '
         <h5 class="product-total" colspan="2">
-        Tổng thanh toán: ' . $tongtien . ' đ
+        Tổng thanh toán: ' . number_format($tongtien, 0, ',', '.') . ' VNĐ
         </h5>
         </tbody>
         
