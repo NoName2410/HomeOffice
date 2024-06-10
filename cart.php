@@ -22,9 +22,6 @@ include "view/header.php";
 <section class="untree_co-section before-footer-section">
 	<div class="container">
 		<div class="row mb-5">
-			<div class="col-md-12">
-				<h3 align="center">Sản phẩm đã thêm</h3>
-			</div>
 			<form class="col-md-12" method="post" action="index.php?act=updateCart">
 				<div class="site-blocks-table">
 					<table class="table">
@@ -54,7 +51,6 @@ include "view/header.php";
 									<td>" . number_format($item[3], 0, ',', '.') . " VNĐ</td>
 									<td>
 										<input type='number' name='quantity[$i]' value='{$item[4]}' style='max-width:50px;' min='0'>
-										<input type='hidden' name='sluong[$i]' value='{$item[0]}'>
 									</td>
 									<td>" . number_format($tongtien, 0, ',', '.') . " VNĐ" . "</td>
 									<td><a href='index.php?act=delcart&i=$i' class='btn btn-black btn-sm'>Xóa</a></td>
@@ -85,7 +81,7 @@ include "view/header.php";
 						<p>Vui lòng nhập địa chỉ nhận hàng.</p>
 					</div>
 					<div class="col-md-8 mb-3 mb-md-0">
-						<input type="text" class="form-control py-3" name="address" placeholder="Địa chỉ">
+						<input type="text" class="form-control py-3" name="address" placeholder="Địa chỉ*" required>
 					</div>
 				</div>
 				<div class="row">
