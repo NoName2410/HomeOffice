@@ -45,7 +45,7 @@ include "view/header.php";
                       <input type="hidden" name="tensp" value="<?= $kq[0]['tensp'] ?>">
                       <input type="hidden" name="img" value="<?= $kq[0]['img'] ?>">
                       <input type="hidden" name="gia" value="<?= $kq[0]['gia'] ?>">
-                      <input type="hidden" name="slc" value="<?= $kq[0]['soluong'] ?>">
+                      <input type="hidden" name="sluong" value="<?= $kq[0]['soluong'] ?>">
                       <input type="submit" name="add_to_cart" value="Thêm vào giỏ" class="btn btn-primary btn-radius me-2 my-2 main-button" style="color:white;">
                     </fieldset>
                   </div>
