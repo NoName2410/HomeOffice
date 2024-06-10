@@ -128,8 +128,8 @@
                         <li class="nav-item" style="margin-right: 20px;"><a class="nav-link" href="index.php?act=thoat" name="exit">Logout</a></li>';
                     } else {
                     ?>
-                        <li class="nav-item" style="margin-right: 20px;"><a class="nav-link" href="login.php">Đăng nhập</a></li>
-                        <li class="nav-item" style="margin-right: 20px;"><a class="nav-link" href="signup.php">Đăng ký</a></li>
+                        <li class="nav-item" style="margin-right: 20px;"><a class="nav-link" href="index.php?act=login">Đăng nhập</a></li>
+                        <li class="nav-item" style="margin-right: 20px;"><a class="nav-link" href="index.php?act=signup">Đăng ký</a></li>
                     <?php } ?>
                 </ul>
             </div>
