@@ -1,7 +1,7 @@
 <div class="main">
     <h2>CẬP NHẬT SẢN PHẨM</h2>
     <!-- <form action="index.php?act=updatespform" method="post">
-        <input type="text" name="tendm" value="<?= $kqone[0]['tendm'] ?>">
+        <input type="text" required name="tendm" value="<?= $kqone[0]['tendm'] ?>">
         <input type="hidden" name="id" value="<?= $kqone[0]['id'] ?>">
         <input type="submit" value="Cập nhật" name="capnhat">
     </form> -->
@@ -34,7 +34,7 @@
                     </select>
                 </td>
                 <td>
-                    <input type="text" name="tensp" value="<?= $spct[0]['tensp'] ?>">
+                    <input type="text" required name="tensp" value="<?= $spct[0]['tensp'] ?>">
                 </td>
                 <td><input type="file" name="hinh"><img src="<?=$spct[0]['img']?>" width="80" alt="">
                     <?php 
@@ -43,9 +43,9 @@
                     }
                     ?>
                 </td>
-                <td><input type="text" name="gia" value="<?= $spct[0]['gia'] ?>"></td>
-                <td><input type="text" name="soluong" value="<?= $spct[0]['soluong'] ?>"></td>
-                <td><input type="text" name="mota" value="<?= $spct[0]['mota'] ?>"></td>
+                <td><input type="text" required name="gia" value="<?= $spct[0]['gia'] ?>"></td>
+                <td><input type="text" required name="soluong" value="<?= $spct[0]['soluong'] ?>"></td>
+                <td><input type="text" required name="mota" value="<?= $spct[0]['mota'] ?>"></td>
                 <input type="hidden" name="id" value="<?= $spct[0]['id'] ?>">
                 <td><input type="submit" value="Cập nhật" name="capnhat"></td>
             </tr>

@@ -31,12 +31,12 @@
             echo '<form action="index.php?act=addtk" method="post">
                         <tr>
                         <td>' . $i . '</td>
-                        <td><input type="text" name="name"></td>
-                        <td><input type="text" name="address"></td>
-                        <td><input type="text" name="email"></td>
-                        <td><input type="text" name="user"></td>
-                        <td><input type="pass" name="pass"></td>
-                        <td><input type="text" name="role"></td>
+                        <td><input type="text" required name="name"></td>
+                        <td><input type="text" required name="address"></td>
+                        <td><input type="text" required name="email"></td>
+                        <td><input type="text" required name="user"></td>
+                        <td><input type="pass" required name="pass"></td>
+                        <td><input type="text" required name="role"></td>
                         <td><input type="submit" value="Thêm mới" name="themmoi"></td>
                         </tr>
                     </form>';
