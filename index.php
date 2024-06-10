@@ -111,11 +111,6 @@ switch ($_GET['act']) {
 		include "product-detail.php";
 		break;
 	case 'about':
-		include "about.php";
-		break;
-	case 'services':
-		include "services.php";
-		break;
 	case 'blog':
 		include "blog.php";
 		break;

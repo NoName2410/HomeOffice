@@ -44,6 +44,7 @@ include "view/header.php";
 								$i = 0;
 								$tongall = 0;
 								foreach ($_SESSION['cart'] as $item) {
+									$sp = getonesp($item[0]);
 									$tongtien = $item[3] * $item[4];
 									$tongall += $tongtien;
 									echo "<tr>
@@ -54,7 +55,7 @@ include "view/header.php";
 									<td>" . number_format($item[3], 0, ',', '.') . " VNĐ</td>
 									<td>
 										<input type='number' name='quantity[$i]' value='{$item[4]}' style='max-width:50px;' min='0'>
-										<input type='hidden' name='sluong[$i]' value='{$item[0]}'>
+										<input type='hidden' name='sluong[$i]' value='{$sp[0]['soluong']}'>
 									</td>
 									<td>" . number_format($tongtien, 0, ',', '.') . " VNĐ" . "</td>
 									<td><a href='index.php?act=delcart&i=$i' class='btn btn-black btn-sm'>Xóa</a></td>

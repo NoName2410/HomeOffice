@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require($_SERVER['DOCUMENT_ROOT'] . '/WebsiteHomeOffice/fpdf/fpdf.php');
+require('D:\AppServ\www\WebsiteHomeOffice\tfpdf\tfpdf.php');
 
 // Kết nối đến cơ sở dữ liệu
 $servername = "localhost";
@@ -39,16 +39,23 @@ if ($result->num_rows > 0) {
     $invoice = $result->fetch_assoc();
 }
 
-// Tạo đối tượng FPDF
-$pdf = new FPDF();
+// Tạo đối tượng TFPDF
+$pdf = new tFPDF();
 $pdf->AddPage();
-$pdf->SetFont('Times', 'B', 16); // Sử dụng font Times New Roman
+
+// Thêm font DejaVu
+$pdf->AddFont('DejaVu', '', 'DejaVuSans.ttf', true);
+$pdf->AddFont('DejaVu', 'B', 'DejaVuSans-Bold.ttf', true);
+
+// Sử dụng font DejaVu
+$pdf->SetFont('DejaVu', 'B', 16); // Sử dụng font DejaVu
 
 // Tiêu đề hóa đơn
 $pdf->Cell(40, 10, 'Hóa đơn');
 $pdf->Ln(20);
 
 // Thông tin khách hàng
+$pdf->SetFont('DejaVu', '', 12);
 $pdf->Cell(100, 10, 'Khách hàng: ' . ($invoice['name'] ?? ''));
 $pdf->Ln(10);
 $pdf->Cell(100, 10, 'Địa chỉ: ' . ($invoice['address'] ?? ''));
@@ -57,13 +64,13 @@ $pdf->Cell(100, 10, 'Email: ' . ($invoice['email'] ?? ''));
 $pdf->Ln(20);
 
 // Tiêu đề bảng sản phẩm
-$pdf->SetFont('Times', 'B', 12);
+$pdf->SetFont('DejaVu', 'B', 12);
 $pdf->Cell(100, 10, 'Sản phẩm');
 $pdf->Cell(40, 10, 'Giá');
 $pdf->Ln(10);
 
 // Sản phẩm
-$pdf->SetFont('Times', '', 12);
+$pdf->SetFont('DejaVu', '', 12);
 while ($item = $items->fetch_assoc()) {
     $pdf->Cell(100, 10, $item['tensp'] . ' x ' . $item['slm']);
     $pdf->Cell(40, 10, number_format($item['gia'] * $item['slm'], 2) . ' VND');
@@ -71,7 +78,7 @@ while ($item = $items->fetch_assoc()) {
 }
 
 // Tổng cộng
-$pdf->SetFont('Times', 'B', 12);
+$pdf->SetFont('DejaVu', 'B', 12);
 $sql = "SELECT SUM(tbl_sanpham.gia * tbl_chitietdonhang.slm) as total
         FROM tbl_donhang
         JOIN tbl_chitietdonhang ON tbl_chitietdonhang.iddh = tbl_donhang.id
@@ -88,3 +95,4 @@ $pdf->Output('D', 'hoa_don.pdf'); // Xuất PDF
 
 // exit;
 ?>
+
