@@ -38,7 +38,8 @@
     }
     echo '
         <h5 class="product-total" colspan="2">
-        Tổng thanh toán: ' . number_format($tongtien, 0, ',', '.') . ' VNĐ
+
+        Tổng thanh toán: ' . number_format($tongall, 0, ',', '.') . ' VNĐ
         </h5>
         </tbody>
         
