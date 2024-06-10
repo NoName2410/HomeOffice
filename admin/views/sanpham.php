@@ -52,7 +52,7 @@
                         <td>' . $tendm . '</td>
                         <td>' . $sp['tensp'] . '</td>
                         <td><img src="' . $sp['img'] . '" width="80px"></td>
-                        <td>' . $sp['gia'] . '</td>
+                        <td>' . number_format($sp['gia'], 0, ',', '.') . ' VNĐ</td>
                         <td>' . $sp['soluong'] . '</td>
                         <td>' . $sp['mota'] . '</td>
                         <td> <a href="index.php?act=updatespform&id=' . $sp['id'] . '">Sửa</a> | <a href="index.php?act=delsp&id=' . $sp['id'] . '">Xóa</a> </td>
