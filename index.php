@@ -237,7 +237,7 @@ switch ($_GET['act']) {
 			unset($_SESSION['email']);
 			unset($_SESSION['pass']);
 		}
-		header('location: login.php');
+		header('location: index.php?act=login');
 		break;
 	default:
 		include "view/header.php";

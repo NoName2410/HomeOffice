@@ -1,4 +1,7 @@
 <?php
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 function addtocart($idsp,$iddh,$slm){
     $conn = connectdb();
     $sql = "INSERT INTO tbl_chitietdonhang (idsp, iddh, slm) VALUES ('$idsp','$iddh','$slm')";
@@ -47,6 +50,13 @@ function getonedh($id)
 function deldh($id){
     $conn = connectdb();
     $sql = "DELETE FROM tbl_donhang WHERE id=".$id;
+    $sql1 = "DELETE FROM tbl_chitietdonhang WHERE id=".$id;
+    $conn->exec($sql);
+}
+
+function delctdh($id){
+    $conn = connectdb();
+    $sql = "DELETE FROM tbl_chitietdonhang WHERE iddh=".$id;
     $conn->exec($sql);
 }
 // function insert_dh($idkh, $payment, $address,$status){

@@ -10,7 +10,7 @@
         </tr>
 
         <?php
-        if (isset($kq) && (count($kq) > 0)) {
+        if (isset($kq) && (count($kq) > -1)) {
             $i = 1;
             foreach ($kq as $dm) {
                 echo '<tr>
