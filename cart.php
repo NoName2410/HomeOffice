@@ -87,7 +87,7 @@ include "view/header.php";
 						<p>Vui lòng nhập địa chỉ nhận hàng.</p>
 					</div>
 					<div class="col-md-8 mb-3 mb-md-0">
-						<input type="text" class="form-control py-3" name="address" placeholder="Địa chỉ">
+						<input type="text" class="form-control py-3" name="address" placeholder="Địa chỉ" required>
 					</div>
 				</div>
 				<div class="row">

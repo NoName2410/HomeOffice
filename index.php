@@ -111,11 +111,6 @@ switch ($_GET['act']) {
 		include "product-detail.php";
 		break;
 	case 'about':
-		include "about.php";
-		break;
-	case 'services':
-		include "services.php";
-		break;
 	case 'blog':
 		include "blog.php";
 		break;
@@ -242,7 +237,7 @@ switch ($_GET['act']) {
 			unset($_SESSION['email']);
 			unset($_SESSION['pass']);
 		}
-		header('location: login.php');
+		header('location: index.php?act=login');
 		break;
 	default:
 		include "view/header.php";

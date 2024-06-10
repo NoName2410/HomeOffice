@@ -10,7 +10,7 @@
         </tr>
 
         <?php
-        if (isset($kq) && (count($kq) > 0)) {
+        if (isset($kq) && (count($kq) > -1)) {
             $i = 1;
             foreach ($kq as $dm) {
                 echo '<tr>
@@ -25,9 +25,9 @@
             echo '<form action="index.php?act=adddm" method="post">
                         <tr>
                         <td>' . $i . '</td>
-                        <td><input type="text" name="tendm"></td>
-                        <td><input type="text" name="uutien"></td>
-                        <td><input type="text" name="hienthi"></td>
+                        <td><input type="text" name="tendm" required></td>
+                        <td><input type="text" name="uutien" required></td>
+                        <td><input type="text" name="hienthi" required></td>
                         <td><input type="submit" value="Thêm mới" name="themmoi"></td>
                         </tr>
                     </form>';

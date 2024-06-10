@@ -30,15 +30,16 @@
                 <td class='product-name'>
                     " . $spct[0]['tensp'] . "
                 </td>
-                <td class='product-quantity'>" . $spct[0]['gia'] . "</td>
+                <td class='product-quantity'>" . number_format($spct[0]['gia'], 0, ',', '.') . " VNĐ</td>
                 <td class='product-quantity'>" . $item['slm'] . "</td>
-                <td class='product-total'>$tongtien</td>
+                <td class='product-total'>number_format($tongtien, 0, ',', '.'). VNĐ</td>
             </tr>";
         $i++;
     }
     echo '
         <h5 class="product-total" colspan="2">
-        Tổng thanh toán: ' . $tongall . ' đ
+
+        Tổng thanh toán: ' . number_format($tongall, 0, ',', '.') . ' VNĐ
         </h5>
         </tbody>
         
@@ -57,7 +58,7 @@
         <form action="index.php?act=updatedhform" method="post">
             <tr>
                 <td>
-                    <input type="text" name="idkh" value="<?= $kqone[0]['idkh'] ?>" readonly="true">
+                    <input type="text" required name="idkh" value="<?= $kqone[0]['idkh'] ?>" readonly="true">
                     <input type="hidden" name="id" value="<?= $kqone[0]['id'] ?>">
                 </td>
                 <td>
@@ -82,7 +83,7 @@
                         ?>
                     </select>
                 </td>
-                <td><input type="text" name="address" value="<?= $kqone[0]['address'] ?>" class="form-control"></td>
+                <td><input type="text" required name="address" value="<?= $kqone[0]['address'] ?>" class="form-control"></td>
                 <td>
                     <select name="status" class="form-control">
                         <?php
