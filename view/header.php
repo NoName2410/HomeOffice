@@ -102,11 +102,14 @@
                         <a class="nav-link dropdown-toggle" href="index.php?act=shop" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             Sản phẩm
                         </a>
+                        
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Danh mục 1</a></li>
-                            <li><a class="dropdown-item" href="#">Danh mục 2</a></li>
-                            <li><a class="dropdown-item" href="#">Danh mục 3</a></li>
-                            <li><a class="dropdown-item" href="#">Danh mục 4</a></li>
+                        <?php 
+                        $dsdm = getall_dm();
+                        foreach($dsdm as $dm){
+                            echo "<li><a class='dropdown-item' href='index.php?act=shop&idcat=".$dm['id']."'>".$dm['tendm']."</a></li>";
+                        }
+                        ?>
                         </ul>
                     </li>
                     <li class="nav-item">
