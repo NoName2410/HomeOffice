@@ -27,15 +27,15 @@
                     }
             echo'</select>
             </td>
-            <td><input type="text" name="tensp" style="width: 120px;"></td>
+            <td><input type="text" required name="tensp" style="width: 120px;"></td>
             <td><input type="file" name="hinh"></td>';
             if(isset($uploadOk) && $uploadOk==0){
                 echo"<script>alert('Vui lòng nhập đúng file!');</script>";
             }
             echo'
-            <td><input type="text" name="gia" style="width: 80px;"></td>
-            <td><input type="text" name="soluong" style="width: 80px;"></td>
-            <td><input type="text" name="mota"></td>
+            <td><input type="text" required name="gia" style="width: 80px;"></td>
+            <td><input type="text" required name="soluong" style="width: 80px;"></td>
+            <td><input type="text" required name="mota"></td>
             <td><input type="submit" value="Thêm mới" name="themmoi"></td>
         </tr>
     </form>';

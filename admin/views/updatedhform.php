@@ -57,7 +57,7 @@
         <form action="index.php?act=updatedhform" method="post">
             <tr>
                 <td>
-                    <input type="text" name="idkh" value="<?= $kqone[0]['idkh'] ?>" readonly="true">
+                    <input type="text" required name="idkh" value="<?= $kqone[0]['idkh'] ?>" readonly="true">
                     <input type="hidden" name="id" value="<?= $kqone[0]['id'] ?>">
                 </td>
                 <td>
@@ -82,7 +82,7 @@
                         ?>
                     </select>
                 </td>
-                <td><input type="text" name="address" value="<?= $kqone[0]['address'] ?>" class="form-control"></td>
+                <td><input type="text" required name="address" value="<?= $kqone[0]['address'] ?>" class="form-control"></td>
                 <td>
                     <select name="status" class="form-control">
                         <?php

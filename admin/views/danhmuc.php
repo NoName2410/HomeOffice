@@ -25,9 +25,9 @@
             echo '<form action="index.php?act=adddm" method="post">
                         <tr>
                         <td>' . $i . '</td>
-                        <td><input type="text" name="tendm"></td>
-                        <td><input type="text" name="uutien"></td>
-                        <td><input type="text" name="hienthi"></td>
+                        <td><input type="text" name="tendm" required></td>
+                        <td><input type="text" name="uutien" required></td>
+                        <td><input type="text" name="hienthi" required></td>
                         <td><input type="submit" value="Thêm mới" name="themmoi"></td>
                         </tr>
                     </form>';
