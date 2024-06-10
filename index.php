@@ -124,11 +124,10 @@ switch ($_GET['act']) {
 		break;
 	case 'cart':
 		if (isset($_POST['add_to_cart']) && $_POST['add_to_cart']) {
-			$id = $_POST['id'];
 			$tensp = $_POST['tensp'];
 			$img = $_POST['img'];
 			$gia = $_POST['gia'];
-			$sluong = $_POST['sluong'];
+			$id = $_POST['id'];
 			$fg = 0;
 
 			// Cập nhật biến $soluong để lấy giá trị số lượng từ form trước đó
@@ -137,32 +136,53 @@ switch ($_GET['act']) {
 			if (!isset($_SESSION['cart'])) {
 				$_SESSION['cart'] = array();
 			}
-			foreach ($_SESSION['cart'] as $key => $item) {
-				if ($item[1] === $tensp) {
-					$slnew = $item[4] + $soluong;
+
+			// Cập nhật biến $checkStock để lấy giá trị số lượng còn trong kho từ form trước đó
+			$checkStock = intval($_POST['sluong']);
+
+			if ($checkStock >= $soluong) {
+
+				foreach ($_SESSION['cart'] as $key => $item) {
+					if ($item[1] === $tensp) {
+						$slnew = $item[4] + $soluong;
 						$_SESSION['cart'][$key][4] = $slnew;
 						$fg = 1;
 						break;
 					}
 				}
 
-			if ($fg == 0) {
-				$item = array($id, $tensp, $img, $gia, $soluong,$sluong);
-				$_SESSION['cart'][] = $item;
+				if ($fg == 0) {
+					$item = array($id, $tensp, $img, $gia, $soluong);
+					$_SESSION['cart'][] = $item;
+				}
+				header("Location:index.php?act=cart");
+				exit();
+			} else {
+				echo '<script>
+								alert("Hàng trong kho không còn đủ (Out of stock)");
+								history.go(-1); // Go back to the previous page
+							</script>';
 			}
-			header("Location:index.php?act=cart");
-			exit();
 		}
 		include "cart.php";
 		break;
-
 	case 'updateCart':
 		if (isset($_POST['modifyQua']) && isset($_POST['quantity'])) {
-			foreach ($_POST['id'] as $key => $value) {
+			foreach ($_POST['quantity'] as $key => $value) {
+				// Lấy số lượng còn trong kho
+				$checkStock = intval($_POST['sluong'][$key]);
+				if ($value > $checkStock) {
+					echo '<script>
+								alert("Hàng trong kho không còn đủ (Out of stock)");
+								history.go(-1); // Go back to the previous page
+							</script>';
+					exit();
+				}
 				if ($value > 0) {
 					$_SESSION['cart'][$key][4] = $value;
 				}
 				if ($value <= 0) {
+					// Nếu người dùng nhập số lượng <= 0, ta sẽ loại bỏ sản phẩm khỏi giỏ hàng
 					unset($_SESSION['cart'][$key]);
 				}
 			}
