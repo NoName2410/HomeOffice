@@ -8,7 +8,7 @@
         <tr> 
             <th class="product-thumbnail">Hình ảnh</th> 
             <th class="product-name">Sản phẩm</th> 
-            <th class="product-price">Giá tiền</th> 
+            <th class="product-quantity">Giá tiền</th> 
             <th class="product-quantity">Số lượng</th> 
             <th class="product-total">Tổng tiền</th> 
         </tr> 
@@ -30,7 +30,7 @@
                 <td class='product-name'>
                     " . $spct[0]['tensp'] . "
                 </td>
-                <td class='product-price'>" . $spct[0]['gia'] . "</td>
+                <td class='product-quantity'>" . $spct[0]['gia'] . "</td>
                 <td class='product-quantity'>" . $item['slm'] . "</td>
                 <td class='product-total'>$tongtien</td>
             </tr>";
@@ -38,7 +38,7 @@
     }
     echo '
         <h5 class="product-total" colspan="2">
-        Tổng thanh toán: '.$tongtien.' đ
+        Tổng thanh toán: ' . $tongtien . ' đ
         </h5>
         </tbody>
         

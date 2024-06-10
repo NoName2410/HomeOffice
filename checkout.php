@@ -191,8 +191,6 @@ include "view/header.php";
 										<option value="64">Yên Bái</option>
 									</select>
 								</div>
-
-
 								<div class="form-group row">
 									<div class="col-md-6">
 										<label style="padding-top: 10px;" for="c_diff_fname" class="text-black">Tên <span class="text-danger">*</span></label>
@@ -232,9 +230,7 @@ include "view/header.php";
 										<input type="text" class="form-control" id="c_diff_phone" name="c_diff_phone" placeholder="Số điện thoại">
 									</div>
 								</div>
-
 							</div>
-
 						</div>
 					</div>
 
@@ -242,11 +238,9 @@ include "view/header.php";
 						<label style="padding-top: 10px;" for="c_order_notes" class="text-black">Ghi chú</label>
 						<textarea name="c_order_notes" id="c_order_notes" cols="30" rows="5" class="form-control" placeholder="Viết ghi chú tại đây ..."></textarea>
 					</div>
-
 				</div>
 			</div>
 			<div class="col-md-6">
-
 				<div class="row mb-5">
 					<div class="col-md-12">
 						<h2 class="h3 mb-3 text-black">Mã giảm giá</h2>
@@ -266,68 +260,49 @@ include "view/header.php";
 
 				<div class="row mb-5">
 					<div class="col-md-12">
-						<h2 class="h3 mb-3 text-black">Đơn hàng của bạn</h2>
-						<div class="p-3 p-lg-5 border bg-white">
-							<table class="table site-block-order-table mb-5">
-								<thead>
-									<th>Sản phẩm</th>
-									<th>Tổng tiền</th>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Top Up T-Shirt <strong class="mx-2">x</strong> 1</td>
-										<td>$250.00</td>
-									</tr>
-									<tr>
-										<td>Polo Shirt <strong class="mx-2">x</strong> 1</td>
-										<td>$100.00</td>
-									</tr>
-									<tr>
-										<td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
-										<td class="text-black">$350.00</td>
-									</tr>
-									<tr>
-										<td class="text-black font-weight-bold"><strong>Order Total</strong></td>
-										<td class="text-black font-weight-bold"><strong>$350.00</strong></td>
-									</tr>
-								</tbody>
-							</table>
+						<form action="index.php?act=thankyou" method="post">
+							<h2 class="h3 mb-3 text-black">Đơn hàng của bạn</h2>
+							<div class="p-3 p-lg-5 border bg-white">
+								<table class="table site-block-order-table mb-5">
+									<thead>
+										<th>Sản phẩm</th>
+										<th>Tổng tiền</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Top Up T-Shirt <strong class="mx-2">x</strong> 1</td>
+											<td>$250.00</td>
+										</tr>
+										<tr>
+											<td>Polo Shirt <strong class="mx-2">x</strong> 1</td>
+											<td>$100.00</td>
+										</tr>
+										<tr>
+											<td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
+											<td class="text-black">$350.00</td>
+										</tr>
+										<tr>
+											<td class="text-black font-weight-bold"><strong>Order Total</strong></td>
+											<td class="text-black font-weight-bold"><strong>$350.00</strong></td>
+										</tr>
+									</tbody>
+								</table>
 
-							<div class="border p-3 mb-3">
-								<h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Direct Bank Transfer</a></h3>
-
-								<div class="collapse" id="collapsebank">
-									<div class="py-2">
-										<p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+								<div class="border p-3 mb-3">
+									<div class="form-group">
+										<label style="padding-top: 10px;" for="checkout" class="text-black">Phương thức thanh toán<span class="text-danger">*</span></label>
+										<select id="checkout" class="form-control">
+											<option value="cod">COD</option>
+											<option value="banking">Thanh toán qua ngân hàng</option>
+											<option value="vnpay">VN-Pay</option>
+										</select>
 									</div>
 								</div>
-							</div>
-
-							<div class="border p-3 mb-3">
-								<h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsecheque" role="button" aria-expanded="false" aria-controls="collapsecheque">Cheque Payment</a></h3>
-
-								<div class="collapse" id="collapsecheque">
-									<div class="py-2">
-										<p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-									</div>
+								<div class="form-group">
+									<input type="submit" class="btn btn-black btn-lg py-3 btn-block" value="Đặt hàng">
 								</div>
 							</div>
-
-							<div class="border p-3 mb-5">
-								<h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsepaypal" role="button" aria-expanded="false" aria-controls="collapsepaypal">Paypal</a></h3>
-
-								<div class="collapse" id="collapsepaypal">
-									<div class="py-2">
-										<p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='index.php?act=thankyou'">Đặt hàng</button>
-							</div>
-
-						</div>
+						</form>
 					</div>
 				</div>
 

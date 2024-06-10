@@ -1,10 +1,3 @@
-<!-- /*
-* Bootstrap 5
-* Template Name: Furni
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
 <!doctype html>
 <html lang="en">
 
@@ -23,7 +16,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMt23cez/3paNdF+ZiBdbCBF1Z6KNNFjc4xJ6mj" crossorigin="anonymous">
 	<link href="../css/tiny-slider.css" rel="stylesheet">
 	<link href="../css/style.css" rel="stylesheet">
-	<title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
 </head>
 
 <body>
@@ -32,7 +24,7 @@
 	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
 		<div class="container">
-			<a class="navbar-brand" href="index.php">Furni<span>.</span></a>
+			<a class="navbar-brand" href="../index.php">HomeOffice<span>.</span></a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -41,14 +33,22 @@
 			<div class="collapse navbar-collapse" id="navbarsFurni">
 				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 					<li class="nav-item">
-						<a class="nav-link" href="../index.php">Home</a>
-					</li>
-					<li><a class="nav-link" href="../index.php?act=shop">Shop</a></li>
-					<li><a class="nav-link" href="../index.php?act=about">About us</a></li>
-					<li><a class="nav-link" href="../index.php?act=services">Services</a></li>
-					<li><a class="nav-link" href="../index.php?act=blog">Blog</a></li>
-					<li><a class="nav-link" href="../index.php?act=contact">Contact us</a></li>
-				</ul>
+					<a class="nav-link" href="../index.php">Trang chủ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="../index.php?act=shop" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Sản phẩm
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Danh mục 1</a></li>
+                            <li><a class="dropdown-item" href="#">Danh mục 2</a></li>
+                            <li><a class="dropdown-item" href="#">Danh mục 3</a></li>
+                            <li><a class="dropdown-item" href="#">Danh mục 4</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link" href="../index.php?act=blog">Blog</a></li>
+                    <li><a class="nav-link" href="../index.php?act=contact">Liên hệ</a></li>
+                </ul>
 
 				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
 					<?php
@@ -58,8 +58,8 @@
                         <li style="margin-right: 20px;"><a class="nav-link" href="index.php?act=thoat" name="exit">Logout</a></li>';
 					} else {
 					?>
-						<li style="margin-right: 20px;"><a class="nav-link" href="login.php">Login</a></li>
-						<li style="margin-right: 20px;"><a class="nav-link" href="signup.php">Signup</a></li>
+						<li style="margin-right: 20px;"><a class="nav-link" href="login.php">Đăng nhập</a></li>
+						<li style="margin-right: 20px;"><a class="nav-link" href="signup.php">Đăng ký</a></li>
 					<?php } ?>
 				</ul>
 			</div>
@@ -120,8 +120,8 @@
 
 			<div class="row g-5 mb-5">
 				<div class="col-lg-4">
-					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Furni<span>.</span></a></div>
-					<p class="mb-4">Chúng tôi luôn muốn đem đến cho bạn một trải nghiệm tốt nhất.Cảm ơn vì đã luôn tin tưởng và ủng hộ Furni !!!</p>
+					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">HomeOffice<span>.</span></a></div>
+					<p class="mb-4">Chúng tôi luôn muốn đem đến cho bạn một trải nghiệm tốt nhất.Cảm ơn vì đã luôn tin tưởng và ủng hộ HomeOffice !!!</p>
 
 					<ul class="list-unstyled custom-social">
 						<li><a href="https://www.facebook.com/giantbox.vn"><span class="fa fa-brands fa-facebook-f"></span></a></li>

@@ -1,9 +1,10 @@
 <?php
 session_start();
 ob_start();
-if(!isset($_SESSION['cart'])) $_SESSION['cart']=[];
+if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
 include "model/connectdb.php";
 include "model/user.php";
+include "donhang.php";
 include "model/validation.php";
 include "model/sanpham.php";
 include "model/danhmuc.php";
@@ -79,7 +80,7 @@ switch ($_GET['act']) {
 			include "account.php";
 		}
 		break;
-	
+
 	case 'shop':
 		$spshop = getall_sp();
 		include "shop.php";
@@ -111,38 +112,86 @@ switch ($_GET['act']) {
 		include "contact.php";
 		break;
 	case 'cart':
+		if (isset($_POST['add_to_cart']) && $_POST['add_to_cart']) {
+			$id = $_POST['id'];
+			$tensp = $_POST['tensp'];
+			$img = $_POST['img'];
+			$gia = $_POST['gia'];
+			$sluong = $_POST['sluong'];
+			$fg = 0;
+
+			// Cập nhật biến $soluong để lấy giá trị số lượng từ form trước đó
+			$soluong = $_POST['soluong'];
+
+			if (!isset($_SESSION['cart'])) {
+				$_SESSION['cart'] = array();
+			}
+			foreach ($_SESSION['cart'] as $key => $item) {
+				if ($item[1] === $tensp) {
+					$slnew = $item[4] + $soluong;
+						$_SESSION['cart'][$key][4] = $slnew;
+						$fg = 1;
+						break;
+					}
+				}
+
+			if ($fg == 0) {
+				$item = array($id, $tensp, $img, $gia, $soluong,$sluong);
+				$_SESSION['cart'][] = $item;
+			}
+			header("Location:index.php?act=cart");
+			exit();
+		}
 		include "cart.php";
 		break;
+
+	case 'updateCart':
+		if (isset($_POST['modifyQua']) && isset($_POST['quantity'])) {
+			foreach ($_POST['id'] as $key => $value) {
+				if ($value > 0) {
+					$_SESSION['cart'][$key][4] = $value;
+				}
+				if ($value <= 0) {
+					unset($_SESSION['cart'][$key]);
+				}
+			}
+			header("Location: index.php?act=cart");
+			exit();
+		}
+		include "cart.php";
+		break;
+
 	case 'delcart':
 		echo $_GET['i'];
-		if(isset($_GET['i'])){
-			if((isset($_SESSION['cart']))&& (count($_SESSION['cart'])>0))
-				array_splice($_SESSION['cart'],$_GET['i'],1);
+		if (isset($_GET['i'])) {
+			if ((isset($_SESSION['cart'])) && (count($_SESSION['cart']) > 0))
+				array_splice($_SESSION['cart'], $_GET['i'], 1);
 		}
-		if(isset($_SESSION['cart']) && (count($_SESSION['cart'])>0)){
+		if (isset($_SESSION['cart']) && (count($_SESSION['cart']) > 0)) {
 			header('location:index.php?act=cart');
-		}else{
+		} else {
 			header('location:index.php');
 		}
 		include "cart.php";
 		break;
 	case 'thanhtoan':
-		if(isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])){
-			$address = $_POST['address'];
-			$payment = $_POST['payment'];
-			$id = $_POST['id'];
-			$iddh = taodonhang($id,$payment,$address);
-			if(isset($_SESSION['cart'])&& (count($_SESSION['cart'])>0)){
-				foreach($_SESSION['cart'] as $item){
-					addtocart($item[0],$iddh,$item[4]);
+		if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
+			if (!$_SESSION['id']) {
+				header("Location:index.php?act=login");
+			} else {
+				$address = $_POST['address'];
+				$payment = $_POST['payment'];
+				$id = $_POST['id'];
+				$iddh = taodonhang($id, $payment, $address);
+				if (isset($_SESSION['cart']) && (count($_SESSION['cart']) > 0)) {
+					foreach ($_SESSION['cart'] as $item) {
+						addtocart($item[0], $iddh, $item[4]);
+					}
+					unset($_SESSION['cart']);
 				}
-				unset($_SESSION['cart']);
 			}
 		}
 		include "thankyou.php";
-		break;
-	case 'checkout':
-		include "checkout.php";
 		break;
 	case 'thankyou':
 		include "thankyou.php";
@@ -156,18 +205,14 @@ switch ($_GET['act']) {
 			unset($_SESSION['name']);
 			unset($_SESSION['email']);
 			unset($_SESSION['pass']);
-			
 		}
 		header('location: login.php');
 		break;
 	default:
 		include "view/header.php";
 		include "view/hero.php";
-		include "view/product.php";
 		include "view/whychooseus.php";
 		include "view/wehelp.php";
-		include "view/popularproduct.php";
-		include "view/testimonialslider.php";
 		include "view/blogsection.php";
 		include "view/footer.php";
 		break;

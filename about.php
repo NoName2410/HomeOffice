@@ -8,9 +8,9 @@ include "view/header.php"
 		<div class="row justify-content-between">
 			<div class="col-lg-5">
 				<div class="intro-excerpt">
-					<h1>About Us</h1>
-					<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-					<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+					<h1>GIỚI THIỆU</h1>
+					<p class="mb-4">Chúng tôi là studio thiết kế nội thất chuyên nghiệp, tận tâm và sáng tạo. Cam kết mang đến cho bạn không gian sống hiện đại và độc đáo, phản ánh phong cách và cá nhân của bạn.</p>
+					<p><a href="" class="btn btn-secondary me-2">Mua ngay</a><a href="#" class="btn btn-white-outline">Khám phá</a></p>
 				</div>
 			</div>
 			<div class="col-lg-7">
@@ -33,7 +33,7 @@ include "view/whychooseus.php";
 
 		<div class="row mb-5">
 			<div class="col-lg-5 mx-auto text-center">
-				<h2 class="section-title">Our Team</h2>
+				<h2 class="section-title">Đội ngũ </h2>
 			</div>
 		</div>
 
@@ -42,11 +42,9 @@ include "view/whychooseus.php";
 			<!-- Start Column 1 -->
 			<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
 				<img src="images/person_1.jpg" class="img-fluid mb-5">
-				<h3 clas><a href="#"><span class="">Lawson</span> Arnold</a></h3>
-				<span class="d-block position mb-4">CEO, Founder, Atty.</span>
-				<p>Separated they live in.
-					Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-				<p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
+				<h3 clas><a href="#"><span class="">Trần Đức </span> Lương</a></h3>
+				<span class="d-block position mb-4">Trưởng nhóm</span>
+				
 			</div>
 			<!-- End Column 1 -->
 
@@ -54,23 +52,18 @@ include "view/whychooseus.php";
 			<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
 				<img src="images/person_2.jpg" class="img-fluid mb-5">
 
-				<h3 clas><a href="#"><span class="">Jeremy</span> Walker</a></h3>
-				<span class="d-block position mb-4">CEO, Founder, Atty.</span>
-				<p>Separated they live in.
-					Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-				<p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
-
+				<h3 clas><a href="#"><span class="">Đỗ Hữu </span> Trung</a></h3>
+				<span class="d-block position mb-4">Thành viên</span>
+				
 			</div>
 			<!-- End Column 2 -->
 
 			<!-- Start Column 3 -->
 			<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
 				<img src="images/person_3.jpg" class="img-fluid mb-5">
-				<h3 clas><a href="#"><span class="">Patrik</span> White</a></h3>
-				<span class="d-block position mb-4">CEO, Founder, Atty.</span>
-				<p>Separated they live in.
-					Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-				<p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
+				<h3 clas><a href="#"><span class="">Nguyễn Minh</span> Chiến</a></h3>
+				<span class="d-block position mb-4">Thành viên</span>
+				
 			</div>
 			<!-- End Column 3 -->
 
@@ -78,15 +71,25 @@ include "view/whychooseus.php";
 			<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
 				<img src="images/person_4.jpg" class="img-fluid mb-5">
 
-				<h3 clas><a href="#"><span class="">Kathryn</span> Ryan</a></h3>
-				<span class="d-block position mb-4">CEO, Founder, Atty.</span>
-				<p>Separated they live in.
-					Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-				<p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
+				<h3 clas><a href="#"><span class="">Nguyễn An</span> Huy</a></h3>
+				<span class="d-block position mb-4">Thành viên</span>
+				
 
 
 			</div>
 			<!-- End Column 4 -->
+
+			<!-- Start Column 5 -->
+			<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+				<img src="images/person_4.jpg" class="img-fluid mb-5">
+
+				<h3 clas><a href="#"><span class="">Phạm Thanh</span> Bình</a></h3>
+				<span class="d-block position mb-4">Thành viên</span>
+				
+
+
+			</div>
+			<!-- End Column 5 -->
 		</div>
 	</div>
 </div>
