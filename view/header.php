@@ -18,66 +18,68 @@
     <title>HomeOffice</title>
     <style>
         /* Submenu CSS */
-.dropdown:hover>.dropdown-menu {
-    display: block;
-}
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
 
-.dropdown-submenu {
-    position: relative;
-}
+        .dropdown-submenu {
+            position: relative;
+        }
 
-.dropdown-submenu .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    margin-top: 0;
-}
+        .dropdown-submenu .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            margin-top: 0;
+        }
 
-.dropdown-submenu:hover>.dropdown-menu {
-    display: block;
-}
+        .dropdown-submenu:hover>.dropdown-menu {
+            display: block;
+        }
 
-/* Change background color and text color for dropdown items */
-.navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.75);
-}
+        /* Change background color and text color for dropdown items */
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.75);
+        }
 
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #347858;
-}
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #ffff;
+        }
 
-.dropdown-menu {
-    background-color: #347858; /* Bootstrap primary blue */
-    border: none;
-}
+        .dropdown-menu {
+            background-color: #3458;
+            /* Bootstrap primary blue */
+            border: none;
+        }
 
-.dropdown-item {
-    color: #347858;
-}
+        .dropdown-item {
+            color: #347858;
+        }
 
-.dropdown-item:hover,
-.dropdown-item:focus {
-    color: #347858; /* Text color on hover */
-    background-color: #347858; /* Light background color on hover */
-}
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            color: #347858;
+            /* Text color on hover */
+            background-color: #347858;
+            /* Light background color on hover */
+        }
 
-.dropdown-submenu .dropdown-menu {
-    background-color: #347858;
-}
+        .dropdown-submenu .dropdown-menu {
+            background-color: #347858;
+        }
 
-/* Ensure the dropdown works correctly on smaller screens */
-@media (max-width: 991.98px) {
-    .dropdown-menu {
-        display: none !important;
-    }
+        /* Ensure the dropdown works correctly on smaller screens */
+        @media (max-width: 991.98px) {
+            .dropdown-menu {
+                display: none !important;
+            }
 
-    .dropdown-menu.show {
-        display: block !important;
-    }
-}
+            .dropdown-menu.show {
+                display: block !important;
+            }
+        }
     </style>
-
 </head>
 
 <body>

@@ -4,8 +4,8 @@
 
 					<!-- Start Column 1 -->
 					<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-						<h2 class="mb-4 section-title">Những chiếc ghế được làm với chất liệu tuyệt vời</h2>
-						<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. </p>
+						<h2 class="mb-4 section-title">Sản phẩm nổi bật</h2>
+						<p class="mb-4">Những sản phẩm được làm với chất liệu tuyệt vời. </p>
 						<p><a href="index.php?act=shop" class="btn">Mua Ngay</a></p>
 					</div> 
 					<!-- End Column 1 -->

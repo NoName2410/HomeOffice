@@ -29,9 +29,7 @@
 	<!-- Start Blog Section -->
 	<div class="blog-section">
 		<div class="container">
-
 			<div class="row">
-
 				<div class="col-12 col-sm-6 col-md-4 mb-5">
 					<div class="post-entry">
 						<a href="blog/blog1.php" class="post-thumbnail"><img src="images/post-1.jpg" alt="Image" class="img-fluid"></a>
@@ -72,71 +70,6 @@
 	</div>
 	<!-- End Blog Section -->
 
-	<!-- Start Footer Section -->
-	<footer class="footer-section">
-		<div class="container relative">
-
-			<div class="sofa-img">
-				<img src="images/sofa.png" alt="Image" class="img-fluid">
-			</div>
-
-
-			<div class="row g-5 mb-5">
-				<div class="col-lg-4">
-					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Furni<span>.</span></a></div>
-					<p class="mb-4">Chúng tôi luôn muốn đem đến cho bạn một trải nghiệm tốt nhất.Cảm ơn vì đã luôn tin tưởng và ủng hộ Furni !!!</p>
-
-					<ul class="list-unstyled custom-social">
-						<li><a href="https://www.facebook.com/giantbox.vn"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
-					</ul>
-				</div>
-
-				<div class="col-lg-8">
-					<div class="row links-wrap">
-						<div class="col-6 col-sm-6 col-md-3">
-							<ul class="list-unstyled">
-								<li><a href="#">About us</a></li>
-								<li><a href="#">Services</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Contact us</a></li>
-							</ul>
-						</div>
-
-					</div>
-				</div>
-
-			</div>
-
-			<div class="border-top copyright">
-				<div class="row pt-4">
-					<div class="col-lg-6">
-						<p class="mb-2 text-center text-lg-start">Copyright &copy;<script>
-								document.write(new Date().getFullYear());
-							</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
-						</p>
-					</div>
-
-					<div class="col-lg-6 text-center text-lg-end">
-						<ul class="list-unstyled d-inline-flex ms-auto">
-							<li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-						</ul>
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-	</footer>
-	<!-- End Footer Section -->
-
-
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/tiny-slider.js"></script>
-	<script src="js/custom.js"></script>
-	</body>
-
-	</html>
+	<?php
+	include "view/footer.php";
+	?>

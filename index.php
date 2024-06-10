@@ -113,27 +113,30 @@ switch ($_GET['act']) {
 		break;
 	case 'cart':
 		if (isset($_POST['add_to_cart']) && $_POST['add_to_cart']) {
+			$id = $_POST['id'];
 			$tensp = $_POST['tensp'];
 			$img = $_POST['img'];
 			$gia = $_POST['gia'];
-			$id = $_POST['id'];
-			$soluong = $_POST['soluong'];
+			$sluong = $_POST['sluong'];
 			$fg = 0;
-			$i = 0;
+
+			// Cập nhật biến $soluong để lấy giá trị số lượng từ form trước đó
+			$soluong = $_POST['soluong'];
+
 			if (!isset($_SESSION['cart'])) {
 				$_SESSION['cart'] = array();
 			}
-			foreach ($_SESSION['cart'] as $item) {
+			foreach ($_SESSION['cart'] as $key => $item) {
 				if ($item[1] === $tensp) {
 					$slnew = $item[4] + $soluong;
-					$_SESSION['cart'][$i][4] = $slnew;
-					$fg = 1;
-					break;
+						$_SESSION['cart'][$key][4] = $slnew;
+						$fg = 1;
+						break;
+					}
 				}
-				$i++;
-			}
+
 			if ($fg == 0) {
-				$item = array($id, $tensp, $img, $gia, $soluong);
+				$item = array($id, $tensp, $img, $gia, $soluong,$sluong);
 				$_SESSION['cart'][] = $item;
 			}
 			header("Location:index.php?act=cart");
@@ -141,6 +144,23 @@ switch ($_GET['act']) {
 		}
 		include "cart.php";
 		break;
+
+	case 'updateCart':
+		if (isset($_POST['modifyQua']) && isset($_POST['quantity'])) {
+			foreach ($_POST['id'] as $key => $value) {
+				if ($value > 0) {
+					$_SESSION['cart'][$key][4] = $value;
+				}
+				if ($value <= 0) {
+					unset($_SESSION['cart'][$key]);
+				}
+			}
+			header("Location: index.php?act=cart");
+			exit();
+		}
+		include "cart.php";
+		break;
+
 	case 'delcart':
 		echo $_GET['i'];
 		if (isset($_GET['i'])) {
@@ -173,9 +193,6 @@ switch ($_GET['act']) {
 		}
 		include "thankyou.php";
 		break;
-	case 'checkout':
-		include "checkout.php";
-		break;
 	case 'thankyou':
 		include "thankyou.php";
 		break;
@@ -194,11 +211,8 @@ switch ($_GET['act']) {
 	default:
 		include "view/header.php";
 		include "view/hero.php";
-		include "view/product.php";
 		include "view/whychooseus.php";
 		include "view/wehelp.php";
-		include "view/popularproduct.php";
-		include "view/testimonialslider.php";
 		include "view/blogsection.php";
 		include "view/footer.php";
 		break;
