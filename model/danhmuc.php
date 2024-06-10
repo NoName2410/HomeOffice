@@ -32,6 +32,15 @@ function getonedm($id)
     return $kq;
 }
 
+function deldmsp($id)
+{
+    $conn = connectdb();
+    $sql = "DELETE FROM tbl_sanpham WHERE iddm=" . $id;
+
+    // use exec() because no results are returned
+    $conn->exec($sql);
+}
+
 function deldm($id)
 {
     $conn = connectdb();

@@ -1,4 +1,7 @@
 <?php
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 session_start();
 ob_start();
 if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
@@ -29,6 +32,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
             case 'deldm':
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
+                    deldmsp($id);
                     deldm($id);
                 }
                 $kq = getall_dm();
@@ -203,6 +207,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
             case 'deldh':
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
+                    delctdh($id);
                     deldh($id);
                 }
                 $kq = getall_dh();
