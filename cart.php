@@ -43,6 +43,7 @@ include "view/header.php";
 							if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
 								$i = 0;
 								$tongall = 0;
+								
 								foreach ($_SESSION['cart'] as $item) {
 									$sp = getonesp($item[0]);
 									$tongtien = $item[3] * $item[4];

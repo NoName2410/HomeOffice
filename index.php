@@ -211,7 +211,12 @@ switch ($_GET['act']) {
 				$iddh = taodonhang($id, $payment, $address);
 				if (isset($_SESSION['cart']) && (count($_SESSION['cart']) > 0)) {
 					foreach ($_SESSION['cart'] as $item) {
+						
 						addtocart($item[0], $iddh, $item[4]);
+						$conn = connectdb();
+						$sql = "UPDATE tbl_sanpham SET soluong = soluong - {$item[4]} WHERE id = '$item[0]'";
+        				$stmt = $conn->prepare($sql);
+        				$stmt->execute();
 					}
 					unset($_SESSION['cart']);
 				}
