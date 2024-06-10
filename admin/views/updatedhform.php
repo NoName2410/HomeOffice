@@ -38,7 +38,7 @@
     }
     echo '
         <h5 class="product-total" colspan="2">
-        Tổng thanh toán: ' . $tongtien . ' đ
+        Tổng thanh toán: ' . $tongall . ' đ
         </h5>
         </tbody>
         
