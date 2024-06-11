@@ -20,7 +20,7 @@ include "view/header.php";
                             <span style="display: block;text-align: center; color:red;"><?php echo $accError?></span>
                             <div class="text-center mt-3">
                                 <input class="btn btn-primary" type="submit" name="login" value="Login">
-                                <a href="signup.php" class="nav-link">Chưa có tài khoản? Đăng ký ngay!</a>
+                                <a href="index.php?act=signup" class="nav-link">Chưa có tài khoản? Đăng ký ngay!</a>
                             </div>
                         </form>
                     </div>
