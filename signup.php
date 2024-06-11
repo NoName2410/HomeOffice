@@ -25,7 +25,7 @@ include "view/header.php"
                             <span style="color:red;display: block;text-align: center;"><?php echo "$passError" ?></span>
                             <div class="text-center mt-3">
                                 <input class="btn btn-primary" type="submit" name="signup" value="Sign up">
-                                <a href="login.php" class="nav-link">Khách hàng cũ? Đăng nhập ngay!</a>
+                                <a href="index.php?act=login" class="nav-link">Khách hàng cũ? Đăng nhập ngay!</a>
                             </div>
                         </form>
                     </div>
