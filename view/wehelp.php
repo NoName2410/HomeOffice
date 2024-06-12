@@ -11,7 +11,12 @@
             </div>
             <div class="col-lg-5 ps-lg-5">
                 <h2 class="section-title mb-4">Chúng tôi giúp bạn thiết kế nội thât sang trọng</h2>
-                <p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+                <p>Trải nghiệm thiết kế đẹp mắt, thu hút. <br>
+                    Tìm kiếm sản phẩm dễ dàng, nhanh chóng. <br>
+                    Mua sắm tiện lợi với giỏ hàng và thanh toán trực tuyến. <br>
+                    Nhận tư vấn tận tình và hỗ trợ 24/7. <br>
+                    An tâm với chính sách đổi trả và bảo hành uy tín. <br>
+                    Hãy liên hệ ngay để sở hữu không gian nội thất mơ ước!</p>
             </div>
         </div>
     </div>
