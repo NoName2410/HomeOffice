@@ -8,7 +8,7 @@
 			<div class="row justify-content-between">
 				<div class="col-lg-5">
 					<div class="intro-excerpt">
-						<h1>Liên hệ</h1>
+						<h1>LIÊN HỆ</h1>
 						<p class="mb-4">
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.4737884515066!2d105.73253187560661!3d21.053730980602012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31345457e292d5bf%3A0x20ac91c94d74439a!2sHanoi%20University%20of%20Industry!5e0!3m2!1sen!2s!4v1718163314950!5m2!1sen!2s" width="1300" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 						</p>

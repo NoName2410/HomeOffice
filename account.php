@@ -9,7 +9,7 @@ include "view/header.php";
             <div class="col-12 col-sm-8 col-md-6 m-auto">
                 <div class="card border-0 shadow">
                     <div class="card body">
-                        <h2 style="font: black; text-align: center; padding-top:20px;">Thông tin tài khoản</h2>
+                        <h2 style="font: black; text-align: center; padding-top:20px;">THÔNG TIN TÀI KHOẢN</h2>
                         <form action="index.php?act=account" method="post">
                             <input style="margin:0 auto;max-width:500px;" type="text" name="name" required class="form-control my-4 py-2" placeholder="Họ tên" value="<?= $kqone[0]['name'] ?>">
                             <input type="hidden" value="<?= $kqone[0]['id'] ?>">

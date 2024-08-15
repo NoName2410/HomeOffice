@@ -139,4 +139,18 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #0056b3;
 }
+
+select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
 </style>

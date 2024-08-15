@@ -1,14 +1,16 @@
 <?php
+// Display all errors for debugging
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require('D:\AppServ\www\WebsiteHomeOffice\tfpdf\tfpdf.php');
+// Include the tFPDF library
+require('D:\XAMPP\htdocs\WebsiteHomeOffice\tfpdf\tfpdf.php');
 
 // Kết nối đến cơ sở dữ liệu
 $servername = "localhost";
 $username = "root";
-$password = "12345678";
+$password = "";
 $dbname = "homeoffice";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -91,6 +93,3 @@ $pdf->Output('D', 'hoa_don.pdf'); // Xuất PDF
 
 // exit;
 ?>
-
-
-

@@ -11,21 +11,22 @@
     </tr>
 
     <?php
-    // ini_set('display_errors', 1);
-    // ini_set('display_startup_errors', 1);
-    // error_reporting(E_ALL);
-    if (isset($kq) && (count($kq) > -1)) {
+    // Ensure $kq and $user are defined and initialized
+    $kq = isset($kq) ? $kq : [];
+    $user = isset($user) ? $user : [];
+
+    if (count($kq) > 0) {
       $i = 1;
       foreach ($kq as $dh) {
+        // Default value for $tenkh
+        $tenkh = 'Unknown User';
         foreach ($user as $tk) {
           if ($dh['idkh'] == $tk['id']) {
             $tenkh = $tk['user'];
+            break; // Stop searching once a match is found
           }
         }
-        echo '
-        <tr>
-          <td>' . $i . '</td>
-          <td>' . $tenkh . '</td>';
+        $pt = ''; // Default value for payment method
         if ($dh['payment'] == 1) {
           $pt = "Thanh toán khi nhận hàng";
         } elseif ($dh['payment'] == 2) {
@@ -33,15 +34,15 @@
         } elseif ($dh['payment'] == 3) {
           $pt = "Đến mua tại quầy";
         }
+        $statusText = $dh['status'] == 1 ? '<a href="index.php?act=statusdh&id=' . $dh['id'] . '">Đơn hàng mới</a>' : 'Đơn hàng đã hoàn thành';
+
         echo '
+        <tr>
+          <td>' . $i . '</td>
+          <td>' . $tenkh . '</td>
           <td>' . $pt . '</td>
-          <td>' . $dh['address'] . '</td>';
-        if ($dh['status'] == 1) {
-          echo '<td><a href="index.php?act=statusdh&id=' . $dh['id'] . '">Đơn hàng mới</a></td>';
-        } else {
-          echo '<td>Đơn hàng đã hoàn thành</td>';
-        }
-        echo '
+          <td>' . $dh['address'] . '</td>
+          <td>' . $statusText . '</td>
           <td>
             <a href="index.php?act=updatedhform&id=' . $dh['id'] . '">Sửa</a>
             | <a href="index.php?act=deldh&id=' . $dh['id'] . '">Xóa</a>

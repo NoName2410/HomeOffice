@@ -1,11 +1,15 @@
 <?php // Kết nối đến database 
-$conn = mysqli_connect("localhost", "root", "12345678", "homeoffice"); // Lấy thông tin đơn hàng 
+$conn = mysqli_connect("localhost", "root", "", "homeoffice"); // Lấy thông tin đơn hàng 
 $selectall = "SELECT * FROM tbl_donhang JOIN tbl_chitietdonhang ON tbl_chitietdonhang.iddh = tbl_donhang.id JOIN tbl_sanpham ON tbl_sanpham.id = tbl_chitietdonhang.idsp";
 $sql = "SELECT * FROM tbl_donhang";
 $donhang = mysqli_query($conn, $sql); // Tính số lượng đơn hàng 
 $total_orders = mysqli_num_rows($donhang);
 $result = mysqli_query($conn, $selectall); // Tính tổng doanh thu
 $total_revenue = 0;
+$totalsp = 0;
+// Ensure $accError is defined before using it
+$user = isset($user) ? $user  : '';
+$tenkh = isset($tenkh) ? $tenkh   : '';
 while ($row = mysqli_fetch_assoc($result)) {
     $totalsp += $row['slm'];
     $total_revenue += $row['gia'] * $row['slm'];
