@@ -10,7 +10,7 @@
 			<div class="row justify-content-between">
 				<div class="col-lg-5">
 					<div class="intro-excerpt">
-						<h1>Blog</h1>
+						<h1>BLOG</h1>
 						<p class="mb-4">Những bài viết mới nhất về những đồ nội thất mà bạn đang quan tâm, những trick để trang trí nhà cửa và còn nhiều hơn thế nữa đang chờ đợi bạn !!!</p>
 					</div>
 				</div>

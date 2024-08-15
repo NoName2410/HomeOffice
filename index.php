@@ -4,12 +4,12 @@ ob_start();
 if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
 include "model/connectdb.php";
 include "model/user.php";
-include "donhang.php";
 include "model/validation.php";
 include "model/sanpham.php";
 include "model/danhmuc.php";
 include "model/donhang.php";
-switch ($_GET['act']) {
+$action = isset($_GET['act']) ? $_GET['act'] : 'default';
+switch ($action) {
 	case 'login':
 		if ((isset($_POST['login'])) && ($_POST['login'])) {
 			$user = $_POST['user'];
